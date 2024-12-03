@@ -1,0 +1,16 @@
+# Ignore medical image files (NIfTI format)
+*.csv
+*.gz
+*.nii
+*.idx
+*.ipynb
+*.npy
+*.pack
+*.rev
+*.sample
+*.tiff
+*.txt
+
+
+
+
