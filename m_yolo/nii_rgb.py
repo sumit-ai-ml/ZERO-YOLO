@@ -66,7 +66,7 @@ for i in tqdm.tqdm(range(len(file))):
     mask_path = os.path.join(masks, file[i])
     save_slices_as_rgb(image_path, mask_path, output_dir, name=file[i], angle=0)'''
 
-file = os.listdir('dataset_nii/test/images')
+'''file = os.listdir('dataset_nii/test/images')
 images = 'dataset_nii/test/images'
 masks = 'dataset_nii/test/labels'
 output_dir = 'dataset/test'
@@ -75,7 +75,7 @@ os.makedirs(output_dir, exist_ok=True)
 for i in tqdm.tqdm(range(len(file))):
     image_path = os.path.join(images, file[i])
     mask_path = os.path.join(masks, file[i])
-    save_slices_as_rgb(image_path, mask_path, output_dir, name=file[i], angle=0)
+    save_slices_as_rgb(image_path, mask_path, output_dir, name=file[i], angle=0)'''
 
 
 
