@@ -10,7 +10,7 @@
 *.sample
 *.tiff
 *.txt
-
-
+*.zip
+!requirements.tzt
 
 
