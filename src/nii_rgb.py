@@ -4,12 +4,6 @@ import numpy as np
 from PIL import Image
 import tqdm
 
-import os
-import nibabel as nib
-import numpy as np
-from PIL import Image
-import tqdm
-
 def save_slices_as_rgb(image_path, mask_path, output_dir, name='img', angle=0):
     # Load the 3D image and mask using nibabel
     img_nii = nib.load(image_path)
