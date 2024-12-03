@@ -1,7 +1,3 @@
-Here's a polished version of your instructions:
-
----
-
 # Med-YOLO-SAM
 
 ## Welcome! 🚀  
