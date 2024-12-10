@@ -11,6 +11,9 @@
 *.tiff
 *.txt
 *.zip
-!requirements.tzt
+!requirements.txt
+.pt
+
+
 
 
