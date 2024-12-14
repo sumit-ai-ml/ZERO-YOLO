@@ -11,7 +11,7 @@
 *.txt
 *.zip
 !requirements.txt
-.pt
+*.pt
 .png 
 .jpg 
 CT/runs
