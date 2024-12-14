@@ -211,6 +211,7 @@ dependencies:
   - zstandard=0.23.0=py311hbc35293_1
   - zstd=1.5.6=hc292b87_0
   - pip:
+      - et-xmlfile==2.0.0
       - filelock==3.13.1
       - fsspec==2024.2.0
       - importlib-resources==6.4.5
@@ -232,6 +233,7 @@ dependencies:
       - nvidia-nccl-cu11==2.21.5
       - nvidia-nvtx-cu11==11.8.86
       - opencv-python==4.10.0.84
+      - openpyxl==3.1.5
       - pillow==10.2.0
       - pytz==2024.2
       - sympy==1.13.1
@@ -241,4 +243,3 @@ dependencies:
       - triton==3.1.0
       - typing-extensions==4.9.0
       - ultralytics-thop==2.0.12
-prefix: /home/sumitpandey/anaconda3/envs/med_yolo
