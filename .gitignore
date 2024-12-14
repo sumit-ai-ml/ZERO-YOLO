@@ -12,7 +12,12 @@
 *.zip
 !requirements.txt
 .pt
-
+.png 
+.jpg 
+CT/runs
+CT/dataset
+CT/New
+CT/dataset_nii
 
 
 
