@@ -8,7 +8,6 @@
 *.rev
 *.sample
 *.tiff
-*.txt
 *.zip
 !requirements.txt
 *.pt
