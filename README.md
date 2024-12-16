@@ -52,7 +52,9 @@ conda env create -f environment.yml
 Install the project in editable mode:  
 ```bash
 conda activate myenv
+```
 
+```bash
 pip install -e .
 ```
 
