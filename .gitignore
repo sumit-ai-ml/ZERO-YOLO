@@ -18,6 +18,8 @@ CT/runs
 CT/dataset
 CT/New
 CT/dataset_nii
-
+CT/Total_segmentator
+CT/wandb
+CT/Your_Project_Name
 
 
