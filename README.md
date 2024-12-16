@@ -63,3 +63,7 @@ pip install -e .
 ### 6. You're All Set! 🎉  
 
 Now you're ready to enjoy using **Med-YOLO**. Dive in and make the most of it!  
+
+### How to use ?
+
+
