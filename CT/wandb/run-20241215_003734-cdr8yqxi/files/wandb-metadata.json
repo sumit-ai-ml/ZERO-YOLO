@@ -1,0 +1,42 @@
+{
+  "os":  "Linux-6.8.0-49-generic-x86_64-with-glibc2.39",
+  "python":  "CPython 3.11.10",
+  "startedAt":  "2024-12-14T23:37:34.067987Z",
+  "program":  "/home/sumitpandey/Documents/MED-YOLO/CT/yolo_.py",
+  "codePath":  "CT/yolo_.py",
+  "git":  {
+    "remote":  "https://github.com/sumit-ai-ml/MED-YOLO.git",
+    "commit":  "6829b63a87fab199fafa00c0d8cb7943cd068534"
+  },
+  "email":  "supa@di.ku.dk",
+  "root":  "/home/sumitpandey/Documents/MED-YOLO/CT",
+  "host":  "sumitpandey-ThinkPad-P15-Gen-2i",
+  "executable":  "/home/sumitpandey/anaconda3/envs/med_yolo/bin/python",
+  "codePathLocal":  "yolo_.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA RTX A3000 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "1005867986944",
+      "used":  "538776985600"
+    }
+  },
+  "memory":  {
+    "total":  "67113525248"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  16
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA RTX A3000 Laptop GPU",
+      "memoryTotal":  "6442450944",
+      "cudaCores":  4096,
+      "architecture":  "Ampere"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}

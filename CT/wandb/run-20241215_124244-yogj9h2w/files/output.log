@@ -1,0 +1,92 @@
+/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /opt/conda/conda-bld/pytorch_1729647369228/work/c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._cuda_getDeviceCount() > 0
+New https://pypi.org/project/ultralytics/8.3.49 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.40 🚀 Python-3.11.10 torch-2.5.1 CPU (11th Gen Intel Core(TM) i9-11950H 2.60GHz)
+[34m[1mengine/trainer: [0mtask=segment, mode=train, model=yolo11n-seg.pt, data=data.yaml, epochs=100, time=None, patience=100, batch=1, imgsz=256, save=True, save_period=-1, cache=False, device=cpu, workers=8, project=Total_segmentator, name=first25, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=0, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=Total_segmentator/first25
+Overriding model.yaml nc=80 with nc=117
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]
+ 23        [16, 19, 22]  1    754351  ultralytics.nn.modules.head.Segment          [117, 32, 64, [64, 128, 256]]
+YOLO11n-seg summary: 355 layers, 2,913,519 parameters, 2,913,503 gradients, 10.7 GFLOPs
+
+Transferred 510/561 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+[34m[1mtrain: [0mScanning /home/sumitpandey/Documents/MED-YOLO/CT/dataset/train/labels... 48308 images, 668 backgrounds, 2609 corrupt:  17%|█▋        | 48308/278190 [00:32<02:34, 1492.44it/s][0m
+Traceback (most recent call last):
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/data/dataset.py", line 140, in get_labels
+    assert cache["hash"] == get_hash(self.label_files + self.im_files)  # identical hash
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/multiprocessing/pool.py", line 856, in next
+    item = self._items.popleft()
+           ^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sumitpandey/Documents/MED-YOLO/CT/yolo_.py", line 14, in <module>
+    results = model.train(
+              ^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/model.py", line 805, in train
+    self.trainer.train()
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/trainer.py", line 207, in train
+    self._do_train(world_size)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/trainer.py", line 322, in _do_train
+    self._setup_train(world_size)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/trainer.py", line 286, in _setup_train
+    self.train_loader = self.get_dataloader(self.trainset, batch_size=batch_size, rank=LOCAL_RANK, mode="train")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/models/yolo/detect/train.py", line 49, in get_dataloader
+    dataset = self.build_dataset(dataset_path, mode, batch_size)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/models/yolo/detect/train.py", line 43, in build_dataset
+    return build_yolo_dataset(self.args, img_path, batch, self.data, mode=mode, rect=mode == "val", stride=gs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/data/build.py", line 87, in build_yolo_dataset
+    return dataset(
+           ^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/data/dataset.py", line 64, in __init__
+    super().__init__(*args, **kwargs)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/data/base.py", line 74, in __init__
+    self.labels = self.get_labels()
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/data/dataset.py", line 142, in get_labels
+    cache, exists = self.cache_labels(cache_path), False  # run cache ops
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/data/dataset.py", line 100, in cache_labels
+    for im_file, lb, shape, segments, keypoint, nm_f, nf_f, ne_f, nc_f, msg in pbar:
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/multiprocessing/pool.py", line 861, in next
+    self._cond.wait(timeout)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+KeyboardInterrupt

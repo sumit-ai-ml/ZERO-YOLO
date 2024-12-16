@@ -1,0 +1,22 @@
+New https://pypi.org/project/ultralytics/8.3.49 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.40 🚀 Python-3.11.10 torch-2.5.1
+Traceback (most recent call last):
+  File "/home/sumitpandey/Documents/MED-YOLO/CT/yolo_.py", line 14, in <module>
+    results = model.train(
+              ^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/model.py", line 799, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/models/yolo/segment/train.py", line 30, in __init__
+    super().__init__(cfg, overrides, _callbacks)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/trainer.py", line 103, in __init__
+    self.device = select_device(self.args.device, self.args.batch)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/utils/torch_utils.py", line 192, in select_device
+    raise ValueError(
+ValueError: Invalid CUDA 'device=gpu' requested. Use 'device=cpu' or pass valid CUDA device(s) if available, i.e. 'device=0' or 'device=0,1,2,3' for Multi-GPU.
+
+torch.cuda.is_available(): True
+torch.cuda.device_count(): 0
+os.environ['CUDA_VISIBLE_DEVICES']: None
+See https://pytorch.org/get-started/locally/ for up-to-date torch install instructions if no CUDA devices are seen by torch.

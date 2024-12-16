@@ -1,6 +1,7 @@
 
 train: /home/sumitpandey/Documents/MED-YOLO/CT/dataset/train/images
 val: /home/sumitpandey/Documents/MED-YOLO/CT/dataset/val/images
+test: /home/sumitpandey/Documents/MED-YOLO/CT/dataset/test/images
 
 names:
     0: 'adrenal_gland_left'
@@ -120,8 +121,6 @@ names:
     114: 'vertebrae_T7'
     115: 'vertebrae_T8'
     116: 'vertebrae_T9'
-    117: 'wrong'
-    118: 'wrong2'
 
 # Hyperparameters ------------------------------------------------------------------------------------------------------
 # lr0: 0.01  # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)

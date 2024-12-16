@@ -1,0 +1,16 @@
+{"time":"2024-12-14T23:18:02.665128354+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-14T23:18:02.66515099+01:00","level":"INFO","msg":"created symlink","path":"/home/sumitpandey/Documents/MED-YOLO/CT/wandb/run-20241214_231802-wmcfz6pa/logs/debug-core.log"}
+{"time":"2024-12-14T23:18:02.767883443+01:00","level":"INFO","msg":"created new stream","id":"wmcfz6pa"}
+{"time":"2024-12-14T23:18:02.767908047+01:00","level":"INFO","msg":"stream: started","id":"wmcfz6pa"}
+{"time":"2024-12-14T23:18:02.767931952+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"wmcfz6pa"}
+{"time":"2024-12-14T23:18:02.768008584+01:00","level":"INFO","msg":"sender: started","stream_id":"wmcfz6pa"}
+{"time":"2024-12-14T23:18:02.768034861+01:00","level":"INFO","msg":"handler: started","stream_id":"wmcfz6pa"}
+{"time":"2024-12-14T23:18:03.198554613+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-14T23:22:05.154292719+01:00","level":"INFO","msg":"stream: closing","id":"wmcfz6pa"}
+{"time":"2024-12-14T23:22:05.154315245+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-14T23:22:05.154772491+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-14T23:22:09.640906117+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-14T23:22:09.937033765+01:00","level":"INFO","msg":"handler: closed","stream_id":"wmcfz6pa"}
+{"time":"2024-12-14T23:22:09.937056493+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"wmcfz6pa"}
+{"time":"2024-12-14T23:22:09.937092749+01:00","level":"INFO","msg":"sender: closed","stream_id":"wmcfz6pa"}
+{"time":"2024-12-14T23:22:09.93710938+01:00","level":"INFO","msg":"stream: closed","id":"wmcfz6pa"}

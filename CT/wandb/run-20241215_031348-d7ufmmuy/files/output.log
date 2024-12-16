@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "/home/sumitpandey/Documents/MED-YOLO/CT/yolo_.py", line 11, in <module>
+    model = YOLO("yolo11n-seg.pt").to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1340, in to
+    return self._apply(convert)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/model.py", line 881, in _apply
+    self = super()._apply(fn)  # noqa
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 258, in _apply
+    self = super()._apply(fn)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 900, in _apply
+    module._apply(fn)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 927, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1326, in convert
+    return t.to(
+           ^^^^^
+RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

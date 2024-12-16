@@ -1,0 +1,16 @@
+{"time":"2024-12-15T02:03:33.714242193+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-15T02:03:33.714249246+01:00","level":"INFO","msg":"created symlink","path":"/home/sumitpandey/Documents/MED-YOLO/CT/wandb/run-20241215_020333-qug5pi2m/logs/debug-core.log"}
+{"time":"2024-12-15T02:03:33.816088246+01:00","level":"INFO","msg":"created new stream","id":"qug5pi2m"}
+{"time":"2024-12-15T02:03:33.816106888+01:00","level":"INFO","msg":"stream: started","id":"qug5pi2m"}
+{"time":"2024-12-15T02:03:33.81620642+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"qug5pi2m"}
+{"time":"2024-12-15T02:03:33.816245243+01:00","level":"INFO","msg":"sender: started","stream_id":"qug5pi2m"}
+{"time":"2024-12-15T02:03:33.816205961+01:00","level":"INFO","msg":"handler: started","stream_id":"qug5pi2m"}
+{"time":"2024-12-15T02:03:34.093567121+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-15T02:04:01.249775842+01:00","level":"INFO","msg":"stream: closing","id":"qug5pi2m"}
+{"time":"2024-12-15T02:04:01.249832949+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-15T02:04:01.250279319+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-15T02:04:01.698153872+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-15T02:04:01.898976902+01:00","level":"INFO","msg":"handler: closed","stream_id":"qug5pi2m"}
+{"time":"2024-12-15T02:04:01.899004121+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qug5pi2m"}
+{"time":"2024-12-15T02:04:01.899041366+01:00","level":"INFO","msg":"sender: closed","stream_id":"qug5pi2m"}
+{"time":"2024-12-15T02:04:01.89905849+01:00","level":"INFO","msg":"stream: closed","id":"qug5pi2m"}

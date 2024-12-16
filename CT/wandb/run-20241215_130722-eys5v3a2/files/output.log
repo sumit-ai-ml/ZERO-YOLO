@@ -1,0 +1,23 @@
+/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /opt/conda/conda-bld/pytorch_1729647369228/work/c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._cuda_getDeviceCount() > 0
+New https://pypi.org/project/ultralytics/8.3.49 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.40 🚀 Python-3.11.10 torch-2.5.1
+Traceback (most recent call last):
+  File "/home/sumitpandey/Documents/MED-YOLO/CT/yolo_.py", line 14, in <module>
+    results = model.train(
+              ^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/model.py", line 799, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/models/yolo/segment/train.py", line 30, in __init__
+    super().__init__(cfg, overrides, _callbacks)
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/engine/trainer.py", line 103, in __init__
+    self.device = select_device(self.args.device, self.args.batch)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sumitpandey/anaconda3/envs/med_yolo/lib/python3.11/site-packages/ultralytics/utils/torch_utils.py", line 192, in select_device
+    raise ValueError(
+ValueError: Invalid CUDA 'device=0' requested. Use 'device=cpu' or pass valid CUDA device(s) if available, i.e. 'device=0' or 'device=0,1,2,3' for Multi-GPU.
+
+torch.cuda.is_available(): False
+torch.cuda.device_count(): 1
+os.environ['CUDA_VISIBLE_DEVICES']: None
