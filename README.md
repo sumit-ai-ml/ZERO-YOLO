@@ -22,10 +22,9 @@ conda activate myenv
 
 Clone the repository to your local machine:  
 ```bash
-git clone <repository-url>
+git clone https://github.com/sumit-ai-ml/MED-YOLO.git
 ```
 
-Replace `<repository-url>` with the actual URL of the GitHub repository.
 
 ---
 
