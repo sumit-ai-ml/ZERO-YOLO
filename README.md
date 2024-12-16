@@ -43,7 +43,7 @@ cd <repository-folder>
 Run the following command to create a new Conda environment using the `environment.yml` file:  
 ```bash
 conda env create -f environment.yml
-
+```
 ---
 
 
