@@ -3,10 +3,10 @@ Name: m_yolo
 Version: 0.1
 Summary: A YOLO-based medical image segmentation package
 Home-page: https://github.com/your-repo/m_yolo
-Author: Your Name
+Author: Sumit Pandey
 Author-email: supa@di.ku.dk
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
+Classifier: Operating System :: OS Independent (tested on Linux)
 Requires-Python: >=3.11
 License-File: LICENSE
