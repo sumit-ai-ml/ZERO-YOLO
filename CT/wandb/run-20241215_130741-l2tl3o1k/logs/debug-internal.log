@@ -1,8 +1,0 @@
-{"time":"2024-12-15T13:07:41.364641523+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
-{"time":"2024-12-15T13:07:41.364650373+01:00","level":"INFO","msg":"created symlink","path":"/home/sumitpandey/Documents/MED-YOLO/CT/wandb/run-20241215_130741-l2tl3o1k/logs/debug-core.log"}
-{"time":"2024-12-15T13:07:41.468985884+01:00","level":"INFO","msg":"created new stream","id":"l2tl3o1k"}
-{"time":"2024-12-15T13:07:41.469047853+01:00","level":"INFO","msg":"stream: started","id":"l2tl3o1k"}
-{"time":"2024-12-15T13:07:41.469129463+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"l2tl3o1k"}
-{"time":"2024-12-15T13:07:41.4691729+01:00","level":"INFO","msg":"handler: started","stream_id":"l2tl3o1k"}
-{"time":"2024-12-15T13:07:41.469316299+01:00","level":"INFO","msg":"sender: started","stream_id":"l2tl3o1k"}
-{"time":"2024-12-15T13:07:41.705899489+01:00","level":"INFO","msg":"Starting system monitor"}
