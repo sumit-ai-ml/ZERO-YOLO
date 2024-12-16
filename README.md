@@ -40,17 +40,20 @@ cd <repository-folder>
 
 ### 4. Install Dependencies  
 
-Install the required Python packages:  
+
+Run the following command to create a new Conda environment using the `environment.yml` file:  
 ```bash
-pip install -r requirements.txt
-```
+conda env create -f environment.yml
 
 ---
+
 
 ### 5. Install the Project  
 
 Install the project in editable mode:  
 ```bash
+conda activate myenv
+
 pip install -e .
 ```
 
