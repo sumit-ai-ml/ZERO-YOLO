@@ -9,7 +9,7 @@ model = YOLO("yolo11n-seg.pt").to(device)
 
 
 results = model.train(
-    batch=8,
+    batch=32,
     device=device,
     data="data.yaml",
     epochs=100,
