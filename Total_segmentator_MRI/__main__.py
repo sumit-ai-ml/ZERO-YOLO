@@ -14,7 +14,7 @@ from tifffile_text import convert_masks_to_labels
 def main():
     print("Starting the program...")
 
-    '''# Call the combine_mask function
+    # Call the combine_mask function
     try:
         combine_mask()
         print("Mask combination completed successfully.")
@@ -144,7 +144,7 @@ def main():
 
     print("\nProgram completed successfully.")
 
-    print('Generating the data.yaml file...')'''
+    print('Generating the data.yaml file...')
     make_yaml()
 
 
