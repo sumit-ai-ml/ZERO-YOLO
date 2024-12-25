@@ -20,5 +20,8 @@ CT/dataset_nii
 CT/Total_segmentator
 CT/wandb
 CT/Your_Project_Name
+Total_segmentator_MRI/dataset
+Total_segmentator_MRI/dataset_nii
+Total_segmentator_MRI/MRI_data
 
 
