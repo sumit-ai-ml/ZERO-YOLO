@@ -1,0 +1,92 @@
+
+train: /home/sumitpandey/Documents/MED-YOLO/Total_segmentator_MRI/dataset/train/images
+val: /home/sumitpandey/Documents/MED-YOLO/Total_segmentator_MRI/dataset/val/images
+test: /home/sumitpandey/Documents/MED-YOLO/Total_segmentator_MRI/dataset/test/images
+
+names:
+    0: 'adrenal_gland_left'
+    1: 'adrenal_gland_right'
+    2: 'aorta'
+    3: 'autochthon_left'
+    4: 'autochthon_right'
+    5: 'brain'
+    6: 'colon'
+    7: 'duodenum'
+    8: 'esophagus'
+    9: 'femur_left'
+    10: 'femur_right'
+    11: 'fibula'
+    12: 'gallbladder'
+    13: 'gluteus_maximus_left'
+    14: 'gluteus_maximus_right'
+    15: 'gluteus_medius_left'
+    16: 'gluteus_medius_right'
+    17: 'gluteus_minimus_left'
+    18: 'gluteus_minimus_right'
+    19: 'heart'
+    20: 'hip_left'
+    21: 'hip_right'
+    22: 'humerus_left'
+    23: 'humerus_right'
+    24: 'iliac_artery_left'
+    25: 'iliac_artery_right'
+    26: 'iliac_vena_left'
+    27: 'iliac_vena_right'
+    28: 'iliopsoas_left'
+    29: 'iliopsoas_right'
+    30: 'inferior_vena_cava'
+    31: 'intervertebral_discs'
+    32: 'kidney_left'
+    33: 'kidney_right'
+    34: 'liver'
+    35: 'lung_left'
+    36: 'lung_right'
+    37: 'pancreas'
+    38: 'portal_vein_and_splenic_vein'
+    39: 'prostate'
+    40: 'quadriceps_femoris_left'
+    41: 'quadriceps_femoris_right'
+    42: 'sacrum'
+    43: 'sartorius_left'
+    44: 'sartorius_right'
+    45: 'small_bowel'
+    46: 'spinal_cord'
+    47: 'spleen'
+    48: 'stomach'
+    49: 'thigh_medial_compartment_left'
+    50: 'thigh_medial_compartment_right'
+    51: 'thigh_posterior_compartment_left'
+    52: 'thigh_posterior_compartment_right'
+    53: 'tibia'
+    54: 'urinary_bladder'
+    55: 'vertebrae'
+
+# Hyperparameters ------------------------------------------------------------------------------------------------------
+# lr0: 0.01  # initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+# lrf: 0.01  # final learning rate (lr0 * lrf)
+# momentum: 0.937  # SGD momentum/Adam beta1
+# weight_decay: 0.0005  # optimizer weight decay 5e-4
+# warmup_epochs: 3.0  # warmup epochs (fractions ok)
+# warmup_momentum: 0.8  # warmup initial momentum
+# warmup_bias_lr: 0.1  # warmup initial bias lr
+# box: 7.5  # box loss gain
+# cls: 0.5  # cls loss gain (scale with pixels)
+# dfl: 1.5  # dfl loss gain
+# pose: 12.0  # pose loss gain
+# kobj: 1.0  # keypoint obj loss gain
+# label_smoothing: 0.0  # label smoothing (fraction)
+# nbs: 64  # nominal batch size
+# hsv_h: 0.015  # image HSV-Hue augmentation (fraction)
+# hsv_s: 0.7  # image HSV-Saturation augmentation (fraction)
+# hsv_v: 0.4  # image HSV-Value augmentation (fraction)
+degrees: 0.5  # image rotation (+/- deg)
+translate: 0.1  # image translation (+/- fraction)
+scale: 0.2  # image scale (+/- gain)
+shear: 0.2  # image shear (+/- deg) from -0.5 to 0.5
+perspective: 0.1  # image perspective (+/- fraction), range 0-0.001
+flipud: 0.7  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+mosaic: 0.8  # image mosaic (probability)
+mixup: 0.1  # image mixup (probability)
+# copy_paste: 0.0  # segment copy-paste (probability)
+    

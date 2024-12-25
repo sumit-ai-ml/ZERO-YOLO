@@ -12,7 +12,7 @@ def preprocess_ct_scan(ct_scan_path):
     ct_scan_data = ct_scan.get_fdata()
     
     # Clip the pixel values to the range [0, 80]
-    ct_scan_data = np.clip(ct_scan_data, 0, 256)
+    ct_scan_data = np.clip(ct_scan_data, 0, 120)
     
     # save it as nifti file
     ct_scan = nib.Nifti1Image(ct_scan_data, affine)
