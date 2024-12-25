@@ -10,9 +10,10 @@ from combine_mask_ import combine_mask
 from train_test import prepare_dataset
 from nii_to_2d import process_dataset
 from tifffile_text import convert_masks_to_labels
+from yolo_ import yolo_train
 
 def main():
-    print("Starting the program...")
+    '''print("Starting the program...")
 
     # Call the combine_mask function
     try:
@@ -142,10 +143,12 @@ def main():
             # Decide whether to continue or exit based on the severity
             continue  # Continue with the next dataset split
 
-    print("\nProgram completed successfully.")
+    print("\nProgram completed successfully.")'''
 
     print('Generating the data.yaml file...')
     make_yaml()
+    print('data.yaml file generated successfully. Now we start training med_yolo model.')
+    yolo_train()
 
 
 if __name__ == "__main__":
