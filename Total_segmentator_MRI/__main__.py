@@ -13,10 +13,10 @@ from tifffile_text import convert_masks_to_labels
 from yolo_ import yolo_train
 
 def main():
-    '''print("Starting the program...")
+    print("Starting the program...")
 
     # Call the combine_mask function
-    try:
+    '''try:
         combine_mask()
         print("Mask combination completed successfully.")
     except Exception as e:
@@ -38,6 +38,7 @@ def main():
     label_subdir = 'segmentations'
     label_filename = 'combined_mask.nii.gz'
     verbose = True  # Set to False to reduce logging output
+    
 
     # Log the absolute paths for verification
     print(f"Meta CSV absolute path: {meta_csv_path}")
@@ -98,7 +99,7 @@ def main():
     # Process training dataset
     print("Starting processing of training dataset...")
     try:
-        process_dataset(train_images, train_masks, train_output, angle=0)
+        process_dataset(train_images, train_masks, train_output)
         print("Finished processing training dataset.\n")
     except Exception as e:
         print(f"Error processing training dataset: {e}")
@@ -107,7 +108,7 @@ def main():
     # Process validation dataset
     print("Starting processing of validation dataset...")
     try:
-        process_dataset(val_images, val_masks, val_output, angle=0)
+        process_dataset(val_images, val_masks, val_output)
         print("Finished processing validation dataset.")
     except Exception as e:
         print(f"Error processing validation dataset: {e}")
@@ -143,11 +144,11 @@ def main():
             # Decide whether to continue or exit based on the severity
             continue  # Continue with the next dataset split
 
-    print("\nProgram completed successfully.")'''
+    print("\nProgram completed successfully.")
 
     print('Generating the data.yaml file...')
     make_yaml()
-    print('data.yaml file generated successfully. Now we start training med_yolo model.')
+    print('data.yaml file generated successfully. Now we start training med_yolo model.')'''
     yolo_train()
 
 

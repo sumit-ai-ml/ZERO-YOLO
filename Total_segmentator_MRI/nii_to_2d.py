@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import tqdm
 
-def process_dataset(images_dir, masks_dir, output_dir, angle=0):
+def process_dataset(images_dir, masks_dir, output_dir):
     """
     Processes NIfTI images and their corresponding masks to save them as RGB slices.
 
@@ -44,5 +44,7 @@ def process_dataset(images_dir, masks_dir, output_dir, angle=0):
             str(mask_file),
             str(output_dir),
             name=file_name,
-            angle=angle
+            angle0=0, 
+            angle1=1, 
+            angle2=2
         )
