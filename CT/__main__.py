@@ -67,7 +67,7 @@ def main():
     
     # Define base_dir (already resolved as script_dir)
     #
-    ct_data()
+    ct_data(folder ='CT_data')
 
     base_dir = script_dir
 
