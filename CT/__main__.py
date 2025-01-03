@@ -7,7 +7,7 @@ import glob
 # Import functions from other modules
 from generate_yaml import make_yaml
 from combine_mask_ import combine_mask
-from train_test import prepare_dataset, mri_data
+from train_test import prepare_dataset, ct_data
 from nii_to_2d import process_dataset
 from tifffile_text import convert_masks_to_labels
 from yolo_ import yolo_train
@@ -19,7 +19,7 @@ def main():
 
     # Call the combine_mask function
     try:
-        combine_mask()
+        combine_mask(folder = 'CT_data')
         print("Mask combination completed successfully.")
     except Exception as e:
         print(f"Error during mask combination: {e}")
@@ -31,12 +31,12 @@ def main():
 
     # Define relative paths based on the script's directory
     meta_csv_path = script_dir / 'meta.csv'
-    mri_data_dir = script_dir / 'MRI_data'
+    mri_data_dir = script_dir / 'CT_data'
     output_dir = script_dir / 'dataset_nii'
 
     # Define other parameters
     splits = ('train', 'val', 'test')  # Add 'test' or other splits if necessary
-    image_filename = 'mri.nii.gz'
+    image_filename = 'ct.nii.gz'
     label_subdir = 'segmentations'
     label_filename = 'combined_mask.nii.gz'
     verbose = True  # Set to False to reduce logging output
@@ -67,7 +67,7 @@ def main():
     
     # Define base_dir (already resolved as script_dir)
     #
-    mri_data()
+    ct_data()
 
     base_dir = script_dir
 
