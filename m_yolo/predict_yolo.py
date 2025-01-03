@@ -156,7 +156,7 @@ def generate_masks(model_path, train_image_dir, val_image_dir,
     
     print("Mask generation completed.")
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     # Example usage
     MODEL_PATH = "runs/segment/train5/weights/best.pt"
     
@@ -172,4 +172,4 @@ if __name__ == "__main__":
         val_image_dir=VAL_IMAGE_DIR,
         train_output_dir=TRAIN_OUTPUT_DIR,
         val_output_dir=VAL_OUTPUT_DIR
-    )
+    )'''

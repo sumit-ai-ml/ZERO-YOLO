@@ -3,20 +3,22 @@
 import os
 import shutil
 from pathlib import Path
-
+import glob
 # Import functions from other modules
 from generate_yaml import make_yaml
 from combine_mask_ import combine_mask
-from train_test import prepare_dataset
+from train_test import prepare_dataset, mri_data
 from nii_to_2d import process_dataset
 from tifffile_text import convert_masks_to_labels
 from yolo_ import yolo_train
+import tqdm
 
 def main():
-    print("Starting the program...")
+    script_dir = Path(__file__).parent.resolve()
+    '''print("Starting the program...")
 
     # Call the combine_mask function
-    '''try:
+    try:
         combine_mask()
         print("Mask combination completed successfully.")
     except Exception as e:
@@ -24,7 +26,7 @@ def main():
         return  # Exit the program if mask combination fails
 
     # Get the absolute path of the script's directory
-    script_dir = Path(__file__).parent.resolve()
+    
     print(f"Script directory: {script_dir}")
 
     # Define relative paths based on the script's directory
@@ -61,11 +63,17 @@ def main():
     except Exception as e:
         print(f"Error during dataset preparation: {e}")
         return  # Exit the program if dataset preparation fails
-
+    
+    
     # Define base_dir (already resolved as script_dir)
+    #
+    mri_data()
+
     base_dir = script_dir
 
-    # Define training directories
+
+
+# Define training directories
     train_images = base_dir / 'dataset_nii' / 'train' / 'images'
     train_masks = base_dir / 'dataset_nii' / 'train' / 'labels'
     train_output = base_dir / 'dataset' / 'train'

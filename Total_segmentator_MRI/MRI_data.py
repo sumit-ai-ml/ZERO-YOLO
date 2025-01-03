@@ -71,6 +71,6 @@ for folder_num, folder in enumerate(tqdm.tqdm(folders, desc="Processing folders"
     #print(f"{folder} Labels in mask: {labels_in_mask} Non-empty Labels: {non_empty_label_count}")
 
     # Save the combined mask
-    combined_mask_nii = nib.Nifti1Image(combined_mask, affine)
+    combined_mask_nii = nib.Nifti1Image(combined_mask, affine)()
     output_path = os.path.join(folder, 'combined_mask.nii.gz')
     nib.save(combined_mask_nii, output_path)

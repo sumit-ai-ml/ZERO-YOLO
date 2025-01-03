@@ -170,5 +170,5 @@ def combine_mask():
 
     print('Mask combination process completed successfully.')
 
-if __name__ == "__main__":
-    combine_mask()
+'''if __name__ == "__main__":
+    combine_mask()'''

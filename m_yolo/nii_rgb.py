@@ -53,7 +53,7 @@ def save_slices_as_rgb(image_path, mask_path, output_dir, name='img', angle0=0, 
         img_pil.save(os.path.join(images_dir, names))
         mask_pil.save(os.path.join(masks_dir, names))
 
-    for j in tqdm.tqdm(range(img_data.shape[1])):
+    '''for j in tqdm.tqdm(range(img_data.shape[1])):
         img_slice = img_data[:, j, :]
         mask_slice = mask_data[:, j, :]
 
@@ -107,11 +107,11 @@ def save_slices_as_rgb(image_path, mask_path, output_dir, name='img', angle0=0, 
         # Convert slices to PIL images
         img_pil = Image.fromarray(img_rgb, mode='RGB')
         mask_pil = Image.fromarray(mask_slice, mode=mask_mode)
-        names = f"{name}_slice_{k}_{angle1}_.tiff"
+        names = f"{name}_slice_{k}_{angle0}_.tiff"
 
         # Save slices in the respective folders
         img_pil.save(os.path.join(images_dir, names))
-        mask_pil.save(os.path.join(masks_dir, names))
+        mask_pil.save(os.path.join(masks_dir, names))'''
 
 
 

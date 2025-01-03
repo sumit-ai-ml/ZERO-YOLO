@@ -1,8 +1,17 @@
-import os
 import shutil
 import pandas as pd
 import tqdm
 import logging
+import glob
+import nibabel as nib
+import numpy as np
+import os
+import glob
+
+import os
+import tqdm 
+import m_yolo
+from m_yolo.preprocess import process_mri_data
 
 def prepare_dataset(
     meta_csv_path='meta.csv',
@@ -133,3 +142,44 @@ def prepare_dataset(
             logging.warning(f'{len(missing_files)} files were missing or failed to copy. Check warnings above.')
 
     logging.info('Dataset preparation completed successfully.')
+
+
+
+import os
+import glob
+import tqdm
+
+# this is to process the MRI data  related to shape and size
+
+def mri_data():
+    # Get the directory of the current Python script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    dataset_path = os.path.join(script_dir, 'dataset_nii')
+
+    # Check if the dataset directory exists
+    if not os.path.exists(dataset_path):
+        print(f"Error: The dataset directory {dataset_path} does not exist.")
+        return
+
+    # Use absolute paths in glob
+    img_file = glob.glob(os.path.join(dataset_path, '*/images/*'))
+    seg_file = glob.glob(os.path.join(dataset_path, '*/labels/*'))
+
+    if not img_file or not seg_file:
+        print("No files found in the specified directories.")
+        return
+
+    print(f"Found {len(img_file)} image files and {len(seg_file)} label files.")
+
+    for i in tqdm.tqdm(range(len(img_file))):
+        try:
+            # Processing image files
+            process_mri_data(img_file[i], img_file[i])
+            # Processing label files
+            process_mri_data(seg_file[i], seg_file[i])
+        except Exception as e:
+            print(f"Error processing file {img_file[i]} or {seg_file[i]}: {e}")
+
+
+if __name__ == "__main__":
+    mri_data()

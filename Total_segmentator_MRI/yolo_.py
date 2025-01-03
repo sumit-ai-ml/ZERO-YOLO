@@ -10,13 +10,13 @@ def yolo_train():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     script_dir = Path().resolve() 
     
-    model_path = script_dir / 'Total_segmentator_MRI/runs/segment/train/weights/best.pt'
+    model_path = script_dir / 'runs/segment/train17/weights/best.pt'
     model = YOLO(model_path).to(device)
 
     script_dir = Path().resolve()
     yaml_path =script_dir / 'Total_segmentator_MRI/data.yaml'
     results = model.train(
-        batch=18,
+        batch=10,
         device=device,
         data=yaml_path,
         epochs=500,
