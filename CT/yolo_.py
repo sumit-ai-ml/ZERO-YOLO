@@ -14,7 +14,7 @@ def yolo_train():
     model = YOLO(model_path).to(device)
 
     script_dir = Path().resolve()
-    yaml_path =script_dir / 'Total_segmentator_MRI/data.yaml'
+    yaml_path =script_dir / 'CT/data.yaml'
     results = model.train(
         batch=10,
         device=device,

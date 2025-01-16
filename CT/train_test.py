@@ -181,5 +181,3 @@ def ct_data():
             print(f"Error processing file {img_file[i]} or {seg_file[i]}: {e}")
 
 
-if __name__ == "__main__":
-    mri_data()

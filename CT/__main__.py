@@ -17,7 +17,7 @@ def main():
     script_dir = Path(__file__).parent.resolve()
     print("Starting the program...")
 
-    # Call the combine_mask function
+    '''# Call the combine_mask function
     try:
         combine_mask(folder = 'CT_data')
         print("Mask combination completed successfully.")
@@ -157,7 +157,7 @@ def main():
     print('Generating the data.yaml file...')
     make_yaml()
     print('data.yaml file generated successfully. Now we start training med_yolo model.')
-    yolo_train()
+    yolo_train()'''
 
 
 if __name__ == "__main__":
