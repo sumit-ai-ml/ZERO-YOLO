@@ -76,18 +76,8 @@ Then open: http://localhost:8501 in your web browser
 ### Step 2: Use the Web Interface
 1. Open your web browser
 2. Go to:
-   - http://localhost:8501 (if using CPU version)
-   - http://localhost:8502 (if using GPU version)
-3. You'll see a friendly interface where you can:
-   - Upload images
-   - Select images to analyze
-   - Choose what to look for in the images
-   - View results
+   - http://localhost:8501 (For web app)
 
-### Step 3: View Results
-- Results will appear on the screen
-- You can download the results
-- All results are saved in the `data/output` folder
 
 ## Common Problems and Solutions 🔧
 
@@ -105,13 +95,6 @@ docker compose --profile cpu up --build  # for CPU version
 docker compose --profile gpu up --build  # for GPU version
 ```
 
-### Problem: "Can't access the website"
-Solution:
-1. Make sure you're using the correct address:
-   - CPU version: http://localhost:8501
-   - GPU version: http://localhost:8502
-2. Try a different web browser
-3. Make sure no firewall is blocking the connection
 
 ## Need Help? 🤝
 If you run into any problems:
