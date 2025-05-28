@@ -1,0 +1,22 @@
+train: /home/sumit-pandey/Documents/MED-YOLO/knee/dataset/train/images
+val: /home/sumit-pandey/Documents/MED-YOLO/knee/dataset/val/images
+test: /home/sumit-pandey/Documents/MED-YOLO/knee/dataset/test/images
+
+names:
+    0: 'femoral lateral'
+    1: 'Femoral Medial'
+    2: 'Patellar'
+    3: 'Tibia'
+    4: 'Tibia Lateral'
+    5: 'Tibia Medial'
+
+# Hyperparameters
+degrees: 0.5  # image rotation (+/- deg)
+translate: 0.1  # image translation (+/- fraction)
+scale: 0.2  # image scale (+/- gain)
+shear: 0.2  # image shear (+/- deg)
+perspective: 0.1  # image perspective (+/- fraction)
+flipud: 0.7  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+mosaic: 0.8  # image mosaic (probability)
+mixup: 0.1  # image mixup (probability)

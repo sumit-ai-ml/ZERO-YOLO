@@ -145,7 +145,7 @@ def generate_masks(model_path, train_image_dir, val_image_dir,
     Returns:
         None
     """
-    # Load the YOLO model
+    # Load the YOLO modeln
     model = load_model(model_path)
     
     print("Processing Training Images...")

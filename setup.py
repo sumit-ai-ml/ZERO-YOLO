@@ -1,19 +1,49 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='m_yolo',  # Name of your package
-    version='0.1',
-    packages=find_packages(),  # Automatically finds `m_yolo` and submodules
-    install_requires=[],       # List dependencies, e.g., ['numpy', 'opencv-python']
-    include_package_data=True,
-    description='A YOLO-based medical image segmentation package',
-    author='Your Name',
-    author_email='supa@di.ku.dk',
-    url='https://github.com/your-repo/m_yolo',  # Replace with your repository URL
-    classifiers=[
-        'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',
-        'Operating System :: OS Independent',
+    name="med-yolo",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        "streamlit>=1.24.0",
+        "torch>=2.0.0",
+        "torchvision>=0.15.0",
+        "ultralytics>=8.0.0",
+        "opencv-python>=4.7.0",
+        "numpy>=1.24.0",
+        "pandas>=2.0.0",
+        "scikit-learn>=1.2.0",
+        "tifffile>=2023.0.0",
+        "pillow>=9.5.0",
+        "matplotlib>=3.7.0",
+        "seaborn>=0.12.0",
+        "nibabel>=5.1.0",
+        "SimpleITK>=2.2.0",
+        "pydicom>=2.4.0",
+        "monai>=1.2.0",
+        "albumentations>=1.3.0",
+        "PyYAML>=6.0.0",
+        "requests>=2.31.0",
     ],
-    python_requires='>=3.11',
+    author="Sumit Pandey",
+    author_email="your.email@example.com",
+    description="Medical Image Analysis with Zero-Shot YOLO",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/sumit-ai-ml/MED-YOLO",
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Healthcare Industry",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.11",
+        "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    ],
+    python_requires=">=3.11",
+    entry_points={
+        "console_scripts": [
+            "med-yolo=ZERO_YOLO_app:main",
+        ],
+    },
 )

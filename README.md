@@ -1,66 +1,135 @@
-# Med-YOLO
+# MED-YOLO: Medical Image Analysis Made Easy 🏥
 
-## Welcome! 🚀  
+## What is MED-YOLO? 🤔
+MED-YOLO is a user-friendly tool that helps doctors and researchers analyze medical images. It can automatically detect and analyze different parts of medical images (like CT scans, X-rays, etc.) without needing to train it first.
 
-### Installation Guide  
+## Features ✨
+- Easy-to-use web interface
+- Works with many types of medical images
+- No technical knowledge required
+- Works on both regular computers and computers with graphics cards
+- Shows results in real-time
 
-### 1. Create the Repository  
+## Before You Start 📋
+You'll need:
+1. A computer running Windows, Mac, or Linux
+2. Docker installed on your computer (we'll help you install it)
+3. (Optional) A graphics card (NVIDIA) for faster processing
 
-Clone the repository to your local machine:  
+## Step-by-Step Installation Guide 🚀
+
+### Step 1: Install Docker
+1. Go to [Docker's website](https://www.docker.com/products/docker-desktop)
+2. Click "Download Docker Desktop"
+3. Run the installer
+4. Follow the installation wizard
+5. Restart your computer when asked
+
+### Step 2: Download MED-YOLO
+1. Click the green "Code" button at the top of this page
+2. Click "Download ZIP"
+3. Extract the ZIP file to a location you can easily find (like your Desktop)
+
+### Step 3: Open Terminal/Command Prompt
+- **Windows**: 
+  - Press `Windows + R`
+  - Type `cmd` and press Enter
+- **Mac**: 
+  - Press `Command + Space`
+  - Type `Terminal` and press Enter
+- **Linux**: 
+  - Press `Ctrl + Alt + T`
+
+### Step 4: Navigate to MED-YOLO
+In the terminal, type:
 ```bash
-git clone https://github.com/sumit-ai-ml/MED-YOLO.git
+# If you saved it to Desktop (Windows)
+cd Desktop/MED-YOLO
+
+# If you saved it to Desktop (Mac/Linux)
+cd ~/Desktop/MED-YOLO
 ```
 
-### 2. Navigate to the Project Directory  
+### Step 5: Run MED-YOLO
+Choose one of these options based on your computer:
 
-Move into the cloned directory:  
+#### Option A: If you have a graphics card (NVIDIA)
 ```bash
-cd MED-YOLO
+docker compose --profile gpu up --build
+```
+Then open: http://localhost:8502 in your web browser
+
+#### Option B: If you don't have a graphics card
+```bash
+docker compose --profile cpu up --build
+```
+Then open: http://localhost:8501 in your web browser
+
+## How to Use MED-YOLO 🎯
+
+### Step 1: Prepare Your Images
+1. Create a folder named `data` in the MED-YOLO folder
+2. Create a folder named `input` inside the `data` folder
+3. Put your medical images in the `input` folder
+   - Supported formats: DICOM, NIfTI, TIFF, PNG, JPG
+
+### Step 2: Use the Web Interface
+1. Open your web browser
+2. Go to:
+   - http://localhost:8501 (if using CPU version)
+   - http://localhost:8502 (if using GPU version)
+3. You'll see a friendly interface where you can:
+   - Upload images
+   - Select images to analyze
+   - Choose what to look for in the images
+   - View results
+
+### Step 3: View Results
+- Results will appear on the screen
+- You can download the results
+- All results are saved in the `data/output` folder
+
+## Common Problems and Solutions 🔧
+
+### Problem: "Docker not found"
+Solution: Make sure Docker is installed and running. Try restarting your computer.
+
+### Problem: "Port already in use"
+Solution: 
+1. Close any other applications that might be using the ports
+2. Or try these commands:
+```bash
+docker compose down
+docker compose --profile cpu up --build  # for CPU version
+# OR
+docker compose --profile gpu up --build  # for GPU version
 ```
 
-### 3. Create a Conda Environment  
+### Problem: "Can't access the website"
+Solution:
+1. Make sure you're using the correct address:
+   - CPU version: http://localhost:8501
+   - GPU version: http://localhost:8502
+2. Try a different web browser
+3. Make sure no firewall is blocking the connection
 
-Run the following command to create a new Conda environment:  
-```bash
-conda create -n med_yolo python=3.11
-```
+## Need Help? 🤝
+If you run into any problems:
+1. Check the "Common Problems" section above
+2. Look for error messages in the terminal
+3. Create an issue on our GitHub page
+4. Contact us for support
 
-Activate your environment:  
-```bash
-conda activate med_yolo
-```
+## Tips and Tricks 💡
+- Keep your images organized in the `data/input` folder
+- Use clear names for your image files
+- Save your results regularly
+- If the program is slow, try using the GPU version if available
 
+## Want to Learn More? 📚
+- Visit our [GitHub page](https://github.com/sumit-ai-ml/MED-YOLO) for more information
+- Check out our [documentation](https://github.com/sumit-ai-ml/MED-YOLO/wiki) for advanced features
+- Join our community for updates and support
 
-### 4. Install Dependencies  
-
-
-Run the following command to create a new Conda environment using the `environment.yml` file:  
-
-```bash
- pip install -r requirements.txt 
-
- pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-
- pip install transformers
-
-```
-
-Now you need to install pytorch:
-
-### 5. Install the Project  
-
-Install the project in editable mode:  
-
-```bash
-pip install -e .
-```
-
----
-
-### 6. You're All Set! 🎉  
-
-Now you're ready to enjoy using **Med-YOLO**. Dive in and make the most of it!  
-
-### 
-
-
+## Thank You! 🙏
+Thank you for using MED-YOLO! We hope it helps you in your medical image analysis work.

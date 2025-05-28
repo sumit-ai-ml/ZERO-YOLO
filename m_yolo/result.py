@@ -11,7 +11,50 @@ import numpy as np
 import nibabel as nib
 import pandas as pd
 
-def create_3d_nifti_from_slices(name_file, img_file_path, pred_mask_file_path, output_path):
+import numpy as np
+
+def match_shapes(original_image, predicted_image):
+    """
+    Reorders the axes of predicted_image to match the shape of original_image,
+    assuming the two shapes are permutations of each other.
+    """
+    original_shape = list(original_image.shape)
+    predicted_shape = list(predicted_image.shape)
+    
+    # Ensure both images have the same number of dimensions
+    if len(original_shape) != len(predicted_shape):
+        raise ValueError("Images must have the same number of dimensions.")
+    
+    perm = []
+    used_indices = []
+    for dim in original_shape:
+        # Find an index in predicted_shape that matches the dimension and isn't used yet.
+        found = False
+        for i, p_dim in enumerate(predicted_shape):
+            if i not in used_indices and p_dim == dim:
+                perm.append(i)
+                used_indices.append(i)
+                found = True
+                break
+        if not found:
+            raise ValueError(f"Dimension {dim} not found in predicted image shape.")
+    
+    reordered_image = np.transpose(predicted_image, perm)
+    
+    if reordered_image.shape != tuple(original_shape):
+        raise ValueError(f"Shape mismatch after transformation: {reordered_image.shape} vs {tuple(original_shape)}")
+    
+    return reordered_image
+
+
+import os
+import numpy as np
+import nibabel as nib
+import pandas as pd
+import matplotlib.pyplot as plt
+import glob
+
+def create_3d_nifti_from_slices(name_file, img_file_path, pred_mask_file_path, output_path, input_path):
     """
     Creates a 3D NIfTI image from 2D predicted mask slices.
 
@@ -26,12 +69,14 @@ def create_3d_nifti_from_slices(name_file, img_file_path, pred_mask_file_path, o
     """
 
     # Get the list of original image slices
-    image_files_num = sorted(glob.glob(os.path.join(img_file_path, f"{name_file}.nii.gz_slice_*.tif")))
+    image_files_num = sorted(glob.glob(os.path.join(img_file_path, f"{name_file}*.tiff")))
+    print('Total number of image slices:', (img_file_path))
+    print('Total number of image slices:', (image_files_num))
     print('Total number of image slices:', len(image_files_num))
 
     # Get the list of predicted mask slices
-    mask_files_num = sorted(glob.glob(os.path.join(pred_mask_file_path, f"{name_file}.nii.gz_slice_*.tif")))
-    print('Total number of slices in predicted masks:', len(mask_files_num))
+    mask_files_num = sorted(glob.glob(os.path.join(pred_mask_file_path, f"{name_file}*.tif")))
+    print('Total number of slices in predicted masks:', (mask_files_num))
 
     # Calculate how many slices need to be filled with blank images
     print('Need to fill images:', len(image_files_num) - len(mask_files_num))
@@ -53,7 +98,7 @@ def create_3d_nifti_from_slices(name_file, img_file_path, pred_mask_file_path, o
         # Construct the filename for the predicted mask slice
         mask_slice_filename = os.path.join(
             pred_mask_file_path,
-            f"{name_file}.nii.gz_slice_{slice_num}_0_.tif"
+            f"{name_file}.nii.gz_slice_{slice_num}_2_.tif"
         )
         if os.path.exists(mask_slice_filename):
             # Read the mask slice if it exists
@@ -68,23 +113,36 @@ def create_3d_nifti_from_slices(name_file, img_file_path, pred_mask_file_path, o
     print('Shape of the 3D image:', img_3d.shape)
 
     # Create a NIfTI image from the 3D array
-    img_nifti = nib.Nifti1Image(img_3d, np.eye(4))
+    # read the affine matrix from the original image
+    img_file = nib.load(input_path+name_file+".nii.gz")
+    affine = img_file.affine
+
+    original_3d = img_file.get_fdata()
+    print('Shape of the original 3D image:', original_3d.shape)
+    print('shape of predicted image: '  , img_3d.shape)
+    img_3d = match_shapes(original_3d, img_3d)
+    print('shape of predicted image: '  , img_3d.shape)
+
+    img_nifti = nib.Nifti1Image(img_3d, affine)
+    print(np.unique(img_3d))
+
 
     # Save the NIfTI image to the specified output path
     output_filename = os.path.join(output_path, f"{name_file}.nii.gz")
     nib.save(img_nifti, output_filename)
     print('Saved NIfTI image to:', output_filename)
 
-
 def choose_folder(folder= 'train'):
     if folder == 'train':
-        img_file_path = 'datasets/'+folder+'/images/'  # Replace with the path to your image slices
-        pred_mask_file_path = 'datasets/'+folder+'/masks/'  # Replace with the path to your predicted mask slices
-        output_path = 'datasets/'+folder+'/nii_masks/'  # Replace with your desired output directory
+        img_file_path = 'dataset/'+folder+'/images/'  # Replace with the path to your image slices
+        pred_mask_file_path = 'dataset/'+folder+'/masks/'  # Replace with the path to your predicted mask slices
+        output_path = 'dataset/'+folder+'/nii_masks/'  # Replace with your desired output directory
+        input_path = 'dataset_nii/'+folder+'/images/'  
     elif folder == 'val':
-        img_file_path = 'datasets/'+folder+'/images/'
-        pred_mask_file_path = 'datasets/'+folder+'/masks/'
-        output_path = 'datasets/'+folder+'/nii_masks/'   
+        img_file_path = 'dataset/'+folder+'/images/'
+        pred_mask_file_path = 'dataset/'+folder+'/masks/'
+        output_path = 'dataset/'+folder+'/nii_masks/'   
+        input_path = 'dataset_nii/'+folder+'/images/'  
 
 
 
@@ -129,8 +187,8 @@ def compute_dice_scores(dataset_type):
     assert dataset_type in ['train', 'val'], "dataset_type must be 'train' or 'val'"
 
     # Define the paths to the folders containing the predicted and mask images
-    predicted_folder = f'datasets/{dataset_type}/nii_predicted_masks/'
-    mask_folder = f'datasets/{dataset_type}/nii_masks/'
+    predicted_folder = f'dataset/{dataset_type}/nii_masks/'
+    mask_folder = f'dataset_nii/{dataset_type}/labels/'
 
     # Get sorted lists of NIfTI files in each folder
     predicted_files = sorted([

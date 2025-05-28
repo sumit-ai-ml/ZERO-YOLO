@@ -1,0 +1,40 @@
+services:
+  zero-yolo-cpu:
+    build:
+      context: .
+      args:
+        - USE_GPU=${USE_GPU:-false}
+    container_name: zero-yolo-cpu
+    ports:
+      - "8501:8501"  # CPU version uses default port
+    volumes:
+      - .:/app
+      - ./data:/app/data  # For persistent data storage
+    restart: unless-stopped
+    profiles:
+      - default
+      - cpu
+
+  zero-yolo-gpu:
+    build:
+      context: .
+      args:
+        - USE_GPU=true
+    container_name: zero-yolo-gpu
+    ports:
+      - "8502:8501"  # GPU version uses different port
+    volumes:
+      - .:/app
+      - ./data:/app/data  # For persistent data storage
+    restart: unless-stopped
+    profiles:
+      - gpu
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu] 
