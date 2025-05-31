@@ -57,7 +57,7 @@ Choose one of these options based on your computer:
 ```bash
 docker compose --profile gpu up --build
 ```
-Then open: http://localhost:8502 in your web browser
+Then open: http://localhost:8501 in your web browser
 
 #### Option B: If you don't have a graphics card
 ```bash
