@@ -1,7 +1,7 @@
-# MED-YOLO: Medical Image Analysis Made Easy 🏥
+# ZERO-YOLO: ical Image Analysis Made Easy 🏥
 
-## What is MED-YOLO? 🤔
-MED-YOLO is a user-friendly tool that helps doctors and researchers analyze medical images. It can automatically detect and analyze different parts of medical images (like CT scans, X-rays, etc.) without needing to train it first.
+## What is ZERO-YOLO? 🤔
+ZERO-YOLO is a user-friendly tool that helps doctors and researchers analyze medical images. It can automatically detect and analyze different parts of medical images (like CT scans, X-rays, etc.) without needing to train it first.
 
 ## Features ✨
 - Easy-to-use web interface
@@ -25,7 +25,7 @@ You'll need:
 4. Follow the installation wizard
 5. Restart your computer when asked
 
-### Step 2: Download MED-YOLO
+### Step 2: Download ZERO-YOLO
 1. Click the green "Code" button at the top of this page
 2. Click "Download ZIP"
 3. Extract the ZIP file to a location you can easily find (like your Desktop)
@@ -40,17 +40,17 @@ You'll need:
 - **Linux**: 
   - Press `Ctrl + Alt + T`
 
-### Step 4: Navigate to MED-YOLO
+### Step 4: Navigate to ZERO-YOLO
 In the terminal, type:
 ```bash
 # If you saved it to Desktop (Windows)
-cd Desktop/MED-YOLO
+cd Desktop/ZERO-YOLO
 
 # If you saved it to Desktop (Mac/Linux)
-cd ~/Desktop/MED-YOLO
+cd ~/Desktop/ZERO-YOLO
 ```
 
-### Step 5: Run MED-YOLO
+### Step 5: Run ZERO-YOLO
 Choose one of these options based on your computer:
 
 #### Option A: If you have a graphics card (NVIDIA)
@@ -65,10 +65,10 @@ docker compose --profile cpu up --build
 ```
 Then open: http://localhost:8501 in your web browser
 
-## How to Use MED-YOLO 🎯
+## How to Use ZERO-YOLO 🎯
 
 ### Step 1: Prepare Your Images
-1. Create a folder named `data` in the MED-YOLO folder
+1. Create a folder named `data` in the ZERO-YOLO folder
 2. Create a folder named `input` inside the `data` folder
 3. Put your medical images in the `input` folder
    - Supported formats: DICOM, NIfTI, TIFF, PNG, JPG
@@ -110,9 +110,9 @@ If you run into any problems:
 - If the program is slow, try using the GPU version if available
 
 ## Want to Learn More? 📚
-- Visit our [GitHub page](https://github.com/sumit-ai-ml/MED-YOLO) for more information
-- Check out our [documentation](https://github.com/sumit-ai-ml/MED-YOLO/wiki) for advanced features
+- Visit our [GitHub page](https://github.com/sumit-ai-ml/ZEROYOLO) for more information
+- Check out our [documentation](https://github.com/sumit-ai-ml/ZEROYOLO/wiki) for advanced features
 - Join our community for updates and support
 
 ## Thank You! 🙏
-Thank you for using MED-YOLO! We hope it helps you in your medical image analysis work.
+Thank you for using -YOLO! We hope it helps you in your ical image analysis work.
