@@ -69,9 +69,11 @@ Then open: http://localhost:8501 in your web browser
 
 ### Step 1: Prepare Your Images
 1. Create a folder named `data` in the ZERO-YOLO folder
-2. Create a folder named `input` inside the `data` folder
-3. Put your medical images in the `input` folder
-   - Supported formats: DICOM, NIfTI, TIFF, PNG, JPG
+2. Create two folders inside `data`:
+   a. _'image'_: contains all images.
+   b. _'mask'_: contains all segmentation masks.
+4. Put your medical images in the `input` folder
+   - Supported formats:  TIFF, PNG, JPG
 
 ### Step 2: Use the Web Interface
 1. Open your web browser
