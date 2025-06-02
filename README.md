@@ -1,20 +1,20 @@
 # ZERO-YOLO: Medical Image Segmentation Made Easy 🏥
 
 ## What is ZERO-YOLO? 🤔
-ZERO-YOLO is a user-friendly tool that helps doctors and researchers analyze medical images. It can automatically detect and analyze different parts of medical images (like CT scans, X-rays, etc.) without needing to train it first.
+ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and researchers to train YOLO models on their own private medical imaging data. It streamlines the entire workflow—from data preprocessing and preparation to model training and result analysis.
 
 ## Features ✨
 - Easy-to-use web interface
 - Works with many types of medical images
 - No technical knowledge required
-- Works on both regular computers and computers with graphics cards
+- Works on both regular computers and computers with or without GPUs. 
 - Shows results in real-time
 
 ## Before You Start 📋
 You'll need:
 1. A computer running Windows, Mac, or Linux
 2. Docker installed on your computer (we'll help you install it)
-3. (Optional) A graphics card (NVIDIA) for faster processing
+3. (Optional) A GPU (NVIDIA) for faster processing
 
 ## Step-by-Step Installation Guide 🚀
 
