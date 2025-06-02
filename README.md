@@ -1,4 +1,4 @@
-# ZERO-YOLO: ical Image Analysis Made Easy 🏥
+# ZERO-YOLO: Medical Image Segmentation Made Easy 🏥
 
 ## What is ZERO-YOLO? 🤔
 ZERO-YOLO is a user-friendly tool that helps doctors and researchers analyze medical images. It can automatically detect and analyze different parts of medical images (like CT scans, X-rays, etc.) without needing to train it first.
