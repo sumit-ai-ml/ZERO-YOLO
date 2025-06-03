@@ -25,12 +25,13 @@ def load_torch():
         return False, str(e)
 
 st.set_page_config(page_title="ZERO-YOLO", layout="centered")
-st.title("ZERO-YOLO: 2D Medical Image Segmentation")
+st.title("ZERO-YOLO: 2D Image Segmentation on custom dataset")
 
 # Add overall app description
 st.markdown("""
 ### Welcome to ZERO-YOLO! 🎯
-This GUI helps you to train YOLO (You Only look Once model) on your own custom segmentation Dataset. It convert segmentation masks into .txt format that requires to train YOLO  model, also gives niteractive playground to play model. 
+This user-friendly GUI lets you train the YOLO (You Only Look Once) model on your own custom segmentation dataset.
+It automatically converts your segmentation masks into the .txt format required by YOLO, and includes an interactive playground to visualize predictions, analyze performance.
 """)
 
 # Initialize session state variables if they don't exist
@@ -41,7 +42,7 @@ if 'label_folder' not in st.session_state:
 if 'output_dir' not in st.session_state:
     st.session_state.output_dir = "Dataset/"
 
-# make step 0: take input image and mask folder, if the file extension is not same in img_folder and label_folder, then make it same,   also make sure the names are same
+# make step 0: take input image and mask folder, if the file extension is not same in img_folder and label_folder, then make it same, also make sure the names are same
 
 from PIL import Image
 
@@ -55,8 +56,26 @@ import streamlit as st
 
 st.header("Step 0: Prepare Image & Mask Formats")
 st.markdown("""
-Upload your images and masks.  
-All files (.png, .jpg, .jpeg, .tif, .tiff) will be converted to `.tiff`.  
+You can upload files in .png, .jpg, .jpeg, .tif, or .tiff format.
+All images and masks will be automatically converted to .tiff.
+
+✅ Before you continue, make sure:
+1. File names match
+    Example:
+    
+    Images: image1.png, image2.png
+    
+    Masks: image1.png, image2.png
+
+2. Mask format is correct
+
+    Pixel value 1 = Class 1
+    
+    Pixel value 2 = Class 2
+    (Each class should have a unique pixel value in the mask)
+
+Once these two conditions are met, you're good to go!
+
 """)
 
 with st.form("format_form"):
