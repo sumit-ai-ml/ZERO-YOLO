@@ -30,8 +30,7 @@ st.title("ZERO-YOLO: 2D Medical Image Segmentation")
 # Add overall app description
 st.markdown("""
 ### Welcome to ZERO-YOLO! 🎯
-This application helps you process medical images and train a YOLO model to identify structures in your images. 
-Follow the steps below to process your data and train your model.
+This GUI helps you to train YOLO (You Only look Once model) on your own custom segmentation Dataset. It convert segmentation masks into .txt format that requires to train YOLO  model, also gives niteractive playground to play model. 
 """)
 
 # Initialize session state variables if they don't exist
