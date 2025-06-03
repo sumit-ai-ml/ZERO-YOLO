@@ -14,13 +14,15 @@ authors:
     affiliation: 1
   - name: Satyasaran Changdar
     orcid: 0000-0000-0000-0000
-    affiliation: 1
+    affiliation: 2
   - name: Erik Bjørnager Dam
     orcid: 0000-0000-0000-0000
     affiliation: 1
 affiliations:
   - name: Department of Computer Science, University of Copenhagen
     index: 1
+  - name: Department of Food Science, University of Copenhagen
+    index: 2
 date: 2025-06-03
 repository: https://github.com/sumit-ai-ml/ZERO-YOLO
 
@@ -55,7 +57,7 @@ Deep-learning models such as YOLO (You Only Look Once) have transformed object d
   - Upload class labels from Excel.
   - Adjust augmentation and hyperparameters: rotation, scaling, mosaic, mix-up, etc.
 - **YOLO Training Pipeline**
-  - Direct integration with Ultralytics YOLOv8.
+  - Direct integration with Ultralytics YOLOv8 or any other advanced version of YOLO.
   - Configurable epochs, batch size, image size, device (GPU/CPU), layer freezing.
 - **Interactive Visualization Playground**
   - Real-time visualization: original images, predicted masks, overlays, prediction confidence.
@@ -78,7 +80,7 @@ Most YOLO and segmentation tools require command-line or programming knowledge, 
 
 # Illustrative Examples
 
-- **Medical Imaging:** Clinicians can segment anatomical structures from CT or MRI scans without writing code.
+- **Medical Imaging:** Clinicians can segment anatomical structures from Ultrasound, X-rays and other 2-D Medical images without writing code.
 - **Agriculture:** Scientists can rapidly train models to detect plant diseases or pests using drone imagery.
 - **Ecology:** Environmental researchers segment land cover or species distributions from satellite data using a simple interface.
 
