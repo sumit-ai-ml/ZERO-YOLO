@@ -10,6 +10,11 @@ import time
 import pandas as pd
 from pathlib import Path
 
+import os
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
+
+
+
 def load_torch():
     """Load PyTorch and YOLO only when needed"""
     try:
@@ -37,6 +42,64 @@ if 'label_folder' not in st.session_state:
 if 'output_dir' not in st.session_state:
     st.session_state.output_dir = "Dataset/"
 
+# make step 0: take input image and mask folder, if the file extension is not same in img_folder and label_folder, then make it same,   also make sure the names are same
+
+from PIL import Image
+
+from PIL import Image
+import os
+import streamlit as st
+
+from PIL import Image
+import os
+import streamlit as st
+
+st.header("Step 0: Prepare Image & Mask Formats")
+st.markdown("""
+Upload your images and masks.  
+All files (.png, .jpg, .jpeg, .tif, .tiff) will be converted to `.tiff`.  
+""")
+
+with st.form("format_form"):
+    img_folder_0 = st.text_input("Path to Images Folder (Step 0)", value=st.session_state.img_folder)
+    mask_folder_0 = st.text_input("Path to Masks Folder (Step 0)", value=st.session_state.label_folder)
+    submitted_0 = st.form_submit_button("Convert All to .tiff")
+
+    allowed_exts = [".png", ".jpg", ".jpeg", ".tiff", ".tif"]
+
+    def convert_folder_to_tiff(folder):
+        converted = 0
+        skipped = 0
+        for f in os.listdir(folder):
+            ext = os.path.splitext(f)[1].lower()
+            if ext in allowed_exts:
+                if ext == ".tiff":
+                    skipped += 1
+                    continue
+                src_path = os.path.join(folder, f)
+                dst_path = os.path.join(folder, os.path.splitext(f)[0] + ".tiff")
+                try:
+                    with Image.open(src_path) as im:
+                        im.save(dst_path)
+                    os.remove(src_path)
+                    converted += 1
+                    st.write(f"Converted {f} → {os.path.basename(dst_path)}")
+                except Exception as e:
+                    st.warning(f"Failed to convert {f}: {e}")
+            else:
+                skipped += 1
+        return converted, skipped
+
+    if submitted_0:
+        converted_img, skipped_img = convert_folder_to_tiff(img_folder_0)
+        converted_mask, skipped_mask = convert_folder_to_tiff(mask_folder_0)
+        st.success(f"Images: Converted {converted_img}, Skipped {skipped_img}. "
+                   f"Masks: Converted {converted_mask}, Skipped {skipped_mask}.")
+        st.info("Now proceed to Step 1.")
+
+
+
+######################################
 
 # Step 1: Data Splitting
 st.header("Step 1: For 2D Data")
@@ -59,6 +122,8 @@ with st.form("split_form"):
     img_folder = st.text_input("Path to Images Folder", value=st.session_state.img_folder)
     label_folder = st.text_input("Path to Masks Folder", value=st.session_state.label_folder)
     output_dir = st.text_input("Output Directory", value=st.session_state.output_dir)
+    
+    
 
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -70,7 +135,11 @@ with st.form("split_form"):
     
     submitted = st.form_submit_button("Split Data")
 
+    # check if file extension is same in img_folder and label_folder
+    
+
     if submitted:
+        
         def split_data(img_folder, label_folder, output_dir, train_split, test_split, val_split):
             os.makedirs(output_dir, exist_ok=True)
             os.makedirs(os.path.join(output_dir, 'train', 'images'), exist_ok=True)
@@ -84,10 +153,14 @@ with st.form("split_form"):
             train_files, test_val_files = train_test_split(img_files, test_size=test_split + val_split, random_state=random_state)
             test_files, val_files = train_test_split(test_val_files, test_size=val_split / (test_split + val_split), random_state=random_state)
             for filename in train_files:
+                
+                
+
                 src_img_path = os.path.join(img_folder, filename)
                 dst_img_path = os.path.join(output_dir, 'train', 'images', filename)
                 shutil.copyfile(src_img_path, dst_img_path)
-                label_filename = filename.replace('.jpg', '.txt')
+                #label_filename = filename.replace('.jpg', '.txt')
+                label_filename = filename
                 src_label_path = os.path.join(label_folder, label_filename)
                 dst_label_path = os.path.join(output_dir, 'train', 'masks', label_filename)
                 shutil.copyfile(src_label_path, dst_label_path)
@@ -95,7 +168,8 @@ with st.form("split_form"):
                 src_img_path = os.path.join(img_folder, filename)
                 dst_img_path = os.path.join(output_dir, 'test', 'images', filename)
                 shutil.copyfile(src_img_path, dst_img_path)
-                label_filename = filename.replace('.jpg', '.txt')
+                #label_filename = filename.replace('.jpg', '.txt')
+                label_filename = filename
                 src_label_path = os.path.join(label_folder, label_filename)
                 dst_label_path = os.path.join(output_dir, 'test', 'masks', label_filename)
                 shutil.copyfile(src_label_path, dst_label_path)
@@ -103,7 +177,8 @@ with st.form("split_form"):
                 src_img_path = os.path.join(img_folder, filename)
                 dst_img_path = os.path.join(output_dir, 'val', 'images', filename)
                 shutil.copyfile(src_img_path, dst_img_path)
-                label_filename = filename.replace('.jpg', '.txt')
+                #label_filename = filename.replace('.jpg', '.txt')
+                label_filename = filename
                 src_label_path = os.path.join(label_folder, label_filename)
                 dst_label_path = os.path.join(output_dir, 'val', 'masks', label_filename)
                 shutil.copyfile(src_label_path, dst_label_path)
