@@ -78,15 +78,7 @@ ZERO-YOLO democratizes access to advanced segmentation, benefiting a wide spectr
 
 Most YOLO and segmentation tools require command-line or programming knowledge, limiting accessibility for non-technical users. ZERO-YOLO distinguishes itself with a fully graphical, no-code interface covering the complete workflow—from data harmonization and annotation conversion to training, inference, and performance evaluation.
 
-# Illustrative Examples
 
-- **Medical Imaging:** Clinicians can segment anatomical structures from Ultrasound, X-rays and other 2-D Medical images without writing code.
-- **Agriculture:** Scientists can rapidly train models to detect plant diseases or pests using drone imagery.
-- **Ecology:** Environmental researchers segment land cover or species distributions from satellite data using a simple interface.
-
-# Acknowledgements
-
-.........................
 
 # References
 
