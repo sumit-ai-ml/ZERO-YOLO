@@ -1,11 +1,10 @@
-# ZERO-YOLO: Medical Image Segmentation Made Easy 🏥
+# ZERO-YOLO: 2D Image Segmentation Made Easy 🏥
 
 ## What is ZERO-YOLO? 🤔
-ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and researchers to train YOLO models on their own private medical imaging data. It streamlines the entire workflow—from data preprocessing and preparation to model training and result analysis.
+ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and researchers to train YOLO models on their own private segmentation dataset. It streamlines the entire workflow—from data preprocessing and preparation to model training and result analysis.
 
 ## Features ✨
 - Easy-to-use web interface
-- Works with many types of medical images
 - No technical knowledge required
 - Works on both regular computers and computers with or without GPUs. 
 - Shows results in real-time
@@ -84,7 +83,9 @@ Then open: http://localhost:8501 in your web browser
 ## Common Problems and Solutions 🔧
 
 ### Problem: "Docker not found"
-Solution: Make sure Docker is installed and running. Try restarting your computer.
+Solution: Make sure Docker is installed and running. Try restarting your computer. 
+
+### Prroblem: 
 
 ### Problem: "Port already in use"
 Solution: 
