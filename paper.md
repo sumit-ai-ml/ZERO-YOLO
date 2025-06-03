@@ -1,3 +1,4 @@
+---
 title: 'ZERO-YOLO: A No-Code GUI for Training Custom YOLO Segmentation Models'
 tags:
   - deep learning
@@ -9,19 +10,21 @@ tags:
   - open source
 authors:
   - name: Sumit Pandey
-    orcid: 0000-0000-0000-0000  
-    affiliation: "1"
+    orcid: 0000-0000-0000-0000
+    affiliation: 1
   - name: Satyasaran Changdar
-    orcid: 0000-0000-0000-0000  
-    affiliation: "1"
+    orcid: 0000-0000-0000-0000
+    affiliation: 1
   - name: Erik Bjørnager Dam
-    orcid: 0000-0000-0000-0000  
-    affiliation: "1"
-   
-
+    orcid: 0000-0000-0000-0000
+    affiliation: 1
 affiliations:
-  - name: Department of Computer Science, University of Copenhagen. 
+  - name: Department of Computer Science, University of Copenhagen
     index: 1
+date: 2025-06-03
+repository: https://github.com/sumit-ai-ml/ZERO-YOLO
+
+---
 
 date: 2025-06-03
 repository: https://github.com/sumit-ai-ml/ZERO-YOLO
