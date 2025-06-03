@@ -98,6 +98,8 @@ docker compose --profile cpu up --build  # for CPU version
 docker compose --profile gpu up --build  # for GPU version
 ```
 
+## Play with sample dataset. 
+With this repo you have sample images in `data.zip` unzip it and start playing with it. For labels we have provided an excel file `label_names.xlsx`.  
 
 ## Need Help? 🤝
 If you run into any problems:
@@ -118,4 +120,8 @@ If you run into any problems:
 - Join our community for updates and support
 
 ## Thank You! 🙏
-Thank you for using -YOLO! We hope it helps you in your ical image analysis work.
+Thank you for using ZERO-YOLO! We hope it helps you in your ical image analysis work.
+
+--------
+
+
