@@ -38,7 +38,17 @@ Image segmentation is central to diverse domains, from healthcare to agriculture
 
 # Statement of Need
 
-Deep-learning models such as YOLO (You Only Look Once) have transformed object detection and segmentation, but their complexity often restricts adoption to those with advanced technical skills. Many scientists and professionals need custom segmentation tools but cannot invest in the steep learning curve of coding, data formatting, and model training. **ZERO-YOLO** provides an accessible, interactive interface, lowering barriers for non-coders and democratizing access to high-performance segmentation across fields like medicine, ecology, and industry.
+Image segmentation is the process of dividing an image into distinct regions that correspond to different objects, structures, or classes of interest. It is a fundamental task in computer vision and has critical applications across a wide range of fields:
+
+- **In healthcare**, segmentation helps radiologists delineate tumors, organs, or lesions in medical scans.
+- **In agriculture**, researchers use segmentation to analyze crop health or identify pests from aerial imagery.
+- **In environmental science**, ecologists segment satellite or drone images to study land use, habitats, or pollution.
+- **In manufacturing**, engineers use segmentation for quality control and defect detection.
+- **In education and research**, segmentation is vital for teaching and developing new computer vision techniques.
+
+Despite its broad relevance, modern segmentation solutions such as YOLO require specialized coding skills, familiarity with command-line tools, and careful data preparation. This creates a barrier for many domain experts—including clinicians, biologists, teachers, and industrial researchers—who need segmentation tools but do not have programming backgrounds.
+
+**ZERO-YOLO** addresses this gap by providing a truly no-code, graphical user interface for the entire YOLO segmentation workflow. Users can prepare data, convert annotations, configure and train models, and visualize results—all without writing code. This lowers the entry barrier, enabling experts from any discipline to apply cutting-edge deep learning in their work.
 
 # Features
 
