@@ -6,11 +6,14 @@ ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and resea
 ## Tutorial 
 ####  How to install
 
-[![Watch the video](https://img.youtube.com/vi/L1_IRtNpP4Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=L1_IRtNpP4Y)
+<iframe width="560" height="315" src="[https://www.youtube.com/embed/L1_IRtNpP4Y](https://www.youtube.com/watch?v=Skf7ckP8jqA)" frameborder="0" allowfullscreen></iframe>
 
 
+### How to use 
+In the repo we have given the `data.zip`, unizip it and play with that. 
 
-{% include youtubePlayer.html id = "iuzXnb44b2o" %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L1_IRtNpP4Y" frameborder="0" allowfullscreen></iframe>
+
 
 ## Features ✨
 - Easy-to-use web interface
