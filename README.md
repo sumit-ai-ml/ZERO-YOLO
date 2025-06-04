@@ -10,7 +10,7 @@ ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and resea
 
 
 
-
+{% include youtubePlayer.html id = "iuzXnb44b2o" %}
 
 ## Features ✨
 - Easy-to-use web interface
