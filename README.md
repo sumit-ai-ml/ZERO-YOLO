@@ -120,7 +120,7 @@ If you run into any problems:
 1. Check the "Common Problems" section above
 2. Look for error messages in the terminal
 3. Create an issue on our GitHub page
-4. Contact us for support
+4. Contact us for support: supa@di.ku.dk
 
 ## Tips and Tricks 💡
 - Keep your images organized in the `data/input` folder
@@ -128,10 +128,6 @@ If you run into any problems:
 - Save your results regularly
 - If the program is slow, try using the GPU version if available
 
-## Want to Learn More? 📚
-- Visit our [GitHub page](https://github.com/sumit-ai-ml/ZEROYOLO) for more information
-- Check out our [documentation](https://github.com/sumit-ai-ml/ZEROYOLO/wiki) for advanced features
-- Join our community for updates and support
 
 ## Thank You! 🙏
 Thank you for using ZERO-YOLO! We hope it helps you in your ical image analysis work.
