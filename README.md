@@ -6,7 +6,8 @@ ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and resea
 ## Tutorial 
 ####  How to install
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L1_IRtNpP4Y" frameborder="0" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/L1_IRtNpP4Y/maxresdefault.jpg)](https://www.youtube.com/watch?v=L1_IRtNpP4Y)
+
 
 
 
