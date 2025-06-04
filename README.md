@@ -3,6 +3,10 @@
 ## What is ZERO-YOLO? 🤔
 ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and researchers to train YOLO models on their own private segmentation dataset. It streamlines the entire workflow—from data preprocessing and preparation to model training and result analysis.
 
+## Tutorial 
+[![Watch the video](https://img.youtube.com/vi/L1_IRtNpP4Y/0.jpg)](https://www.youtube.com/watch?v=L1_IRtNpP4Y)
+
+
 ## Features ✨
 - Easy-to-use web interface
 - No technical knowledge required
