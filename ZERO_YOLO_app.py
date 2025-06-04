@@ -36,9 +36,9 @@ It automatically converts your segmentation masks into the .txt format required 
 
 # Initialize session state variables if they don't exist
 if 'img_folder' not in st.session_state:
-    st.session_state.img_folder = "images/"
+    st.session_state.img_folder = "data/Image/"
 if 'label_folder' not in st.session_state:
-    st.session_state.label_folder = "masks/"
+    st.session_state.label_folder = "data/Mask/"
 if 'output_dir' not in st.session_state:
     st.session_state.output_dir = "Dataset/"
 
@@ -74,7 +74,15 @@ All images and masks will be automatically converted to .tiff.
     Pixel value 2 = Class 2
     (Each class should have a unique pixel value in the mask)
 
-Once these two conditions are met, you're good to go!
+3. Image dimensions should be: (x, y, 3), 
+where x and y are the dimensions of the image and 3 is the number of channels (RGB),
+if any image in has sungle channel than convert it to 3 channel by repeating the channel.
+
+
+
+    
+
+Once these conditions are met, you're good to go!
 
 """)
 
@@ -225,16 +233,16 @@ The app will handle the conversion automatically! 🎯
 
 with st.form("yolo_form"):
     st.subheader("Train Data")
-    train_mask_dir = st.text_input("Train Masks Directory", value="/path/to/train/masks")
-    train_label_dir = st.text_input("Train Labels Output Directory", value="/path/to/train/labels")
+    train_mask_dir = st.text_input("Train Masks Directory", value="Dataset/train/masks")
+    train_label_dir = st.text_input("Train Labels Output Directory", value="Dataset/train/labels")
 
     st.subheader("Validation Data")
-    val_mask_dir = st.text_input("Validation Masks Directory", value="/path/to/val/masks")
-    val_label_dir = st.text_input("Validation Labels Output Directory", value="/path/to/val/labels")
+    val_mask_dir = st.text_input("Validation Masks Directory", value="Dataset/val/masks")
+    val_label_dir = st.text_input("Validation Labels Output Directory", value="Dataset/val/labels")
 
     st.subheader("Test Data")
-    test_mask_dir = st.text_input("Test Masks Directory", value="/path/to/test/masks")
-    test_label_dir = st.text_input("Test Labels Output Directory", value="/path/to/test/labels")
+    test_mask_dir = st.text_input("Test Masks Directory", value="Dataset/test/masks")
+    test_label_dir = st.text_input("Test Labels Output Directory", value="Dataset/test/labels")
 
     # Class mapping configuration
     st.subheader("Class Mapping")
@@ -326,7 +334,7 @@ The app will create a YAML file with all your settings! 🎯
 
 with st.form("yaml_form"):
     st.subheader("Dataset Paths")
-    dataset_dir = st.text_input("Dataset Directory", value=os.getcwd(), help="Enter the full path to your dataset directory")
+    dataset_dir = st.text_input("Dataset Directory", value="Dataset", help="Enter the full path to your dataset directory")
     
     st.subheader("Label Names")
     excel_file = st.file_uploader("Upload Excel File with Label Names", type=['xlsx'])
@@ -422,7 +430,8 @@ mixup: {mixup}  # image mixup (probability)
             st.error(f"Error creating YAML file: {e}")
             progress_bar.empty()
             status_text.empty()
-
+import os
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
 # Step 4: YOLO Training
 st.header("Step 4: YOLO Training")
 st.markdown("""
@@ -448,15 +457,15 @@ with st.form("training_form"):
     # Model path input
     model_path = st.text_input(
         "YOLO Model Path",
-        value="yolov8n-seg.pt",
-        help="Path to your YOLO model (.pt file). Use 'yolov8n-seg.pt' for latest segmentation model."
+        value="yolo11n-seg.pt",
+        help="Path to your own pretrained YOLO model (.pt file). Use 'yolo11n-seg.pt' or any other version of segmentation YOLO"
     )
     
     # Data configuration
     st.subheader("Data Configuration")
     yaml_path = st.text_input(
         "Path to data.yaml",
-        value=os.path.join(os.getcwd(), 'data.yaml'),
+        value=os.path.join("Dataset", 'data.yaml'),
         help="Path to your data.yaml file"
     )
     
@@ -495,9 +504,12 @@ with st.form("training_form"):
             # Validate paths
             if not os.path.exists(yaml_path):
                 raise FileNotFoundError(f"data.yaml not found at: {yaml_path}")
-            
-            if not os.path.exists(model_path) and model_path != "yolov8n-seg.pt":
-                raise FileNotFoundError(f"Model not found at: {model_path}")
+            # show error if model terminal 
+
+
+
+            #if not os.path.exists(model_path):
+            #    raise FileNotFoundError(f"Model not found at: {model_path}")
             
             # Set up device
             if device == "auto":
@@ -505,7 +517,7 @@ with st.form("training_form"):
             
             status_text.text("Loading model...")
             progress_bar.progress(10)
-            
+            print(model_path)
             # Load model
             model = YOLO(model_path).to(device)
             
@@ -523,6 +535,9 @@ with st.form("training_form"):
             )
             
             progress_bar.progress(100)
+            # show the terminal progress in streamlit
+            #st.write(results)
+            
             status_text.text("Training completed successfully!")
             st.success("Training completed! Check the 'runs' directory for results.")
             
@@ -559,7 +574,7 @@ with st.form("mask_generation_form"):
     # Model path input
     model_path = st.text_input(
         "Path to Trained Model",
-        value="/path/to/your/model.pt",
+        value="runs/segment/train7/weights/best.pt",
         help="Path to your trained YOLO model weights (.pt file)"
     )
     
@@ -605,8 +620,8 @@ with st.form("mask_generation_form"):
                 raise RuntimeError(f"Failed to initialize PyTorch: {error}")
             
             # Validate paths
-            if not os.path.exists(model_path):
-                raise FileNotFoundError(f"Model not found at: {model_path}")
+            #if not os.path.exists(model_path):
+            #    raise FileNotFoundError(f"Model not found at: {model_path}")
             
             # Create output directories
             os.makedirs(train_output_dir, exist_ok=True)
@@ -672,12 +687,12 @@ with st.form("visualization_form"):
     # Model path input
     viz_model_path = st.text_input(
         "Path to Trained Model",
-        value="/home/sumit-pandey/Documents/MED-YOLO/knee/runs/segment/train4/weights/best.pt",
+        value="runs/segment/train4/weights/best.pt",
         help="Path to your trained YOLO model weights (.pt file)"
     )
     
     # Image selection with absolute path
-    default_image_dir = os.path.abspath(os.path.join(os.getcwd(), "knee/Dataset_2d/train/images"))
+    default_image_dir = os.path.abspath(os.path.join(os.getcwd(), "Dataset/test/images"))
     image_dir = st.text_input(
         "Images Directory",
         value=default_image_dir,
@@ -909,13 +924,13 @@ with st.form("evaluation_form"):
     with col1:
         predicted_masks_dir = st.text_input(
             "Predicted Masks Directory",
-            value="dataset/predicted_masks",
+            value="dataset/test/predicted_masks",
             help="Directory containing masks generated by the model"
         )
     with col2:
         original_masks_dir = st.text_input(
             "Original Masks Directory",
-            value="dataset/original_masks",
+            value="dataset/test/masks",
             help="Directory containing the ground truth masks"
         )
     
