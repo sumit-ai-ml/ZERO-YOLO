@@ -28,9 +28,6 @@ repository: https://github.com/sumit-ai-ml/ZERO-YOLO
 
 ---
 
-date: 2025-06-03
-repository: https://github.com/sumit-ai-ml/ZERO-YOLO
----
 
 # Summary
 
