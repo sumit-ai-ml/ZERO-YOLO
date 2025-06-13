@@ -71,6 +71,19 @@ Despite its broad relevance, modern segmentation solutions such as YOLO require 
 - **Mask Generation & Evaluation**
   - Automated inference to generate masks from new images.
   - Built-in metrics: Dice Score, Intersection-over-Union (IoU), sensitivity, specificity.
+ 
+# Software Description
+
+| Aspect                | Detail |
+|-----------------------|--------|
+| **Language / stack**  | Python 3.10; Streamlit UI; PyTorch backend; Ultralytics YOLO engine |
+| **Distribution**      | One-command Docker Compose (CPU or NVIDIA GPU profile) |
+| **Input**             | Image folder + segmentation-mask folder + *label\_names.xlsx* listing classes |
+| **Output**            | Trained `*.pt` weights, live training plots, interactive mask overlays |
+| **Licence**           | MIT (permissive, no copyleft) |
+
+Internally the app launches a YOLO training process with user-selected epochs and model size, streams logs to the UI, and writes artefacts to the `runs/` directory. A small custom wrapper auto-generates YOLO YAML configs and converts segmentation masks to COCO-style polygons when needed.
+
 
 # Domain Impact
 
