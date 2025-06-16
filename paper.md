@@ -99,9 +99,6 @@ ZERO-YOLO democratizes access to advanced segmentation, benefiting a wide spectr
 - **Environmental Science:** Segmentation of satellite/drone imagery for ecological studies.
 - **Education:** Enables hands-on teaching of deep-learning segmentation without programming barriers.
 
-# State of the Field
-
-Most YOLO and segmentation tools require command-line or programming knowledge, limiting accessibility for non-technical users. ZERO-YOLO distinguishes itself with a fully graphical, no-code interface covering the complete workflow—from data harmonization and annotation conversion to training, inference, and performance evaluation.
 
 # References
 
