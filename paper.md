@@ -30,11 +30,9 @@ bibliography: paper.bib
 
 # Summary
 
-State-of-the-art object-detection models such as **YOLOv5/YOLOv8** routinely achieve impressive accuracy, yet deploying them on a *new* dataset still demands (i) command-line proficiency, (ii) careful data re-formatting, and (iii) GPU-enabled environments that many domain scientists lack.  
-Commercial “auto-ML” platforms (e.g. Roboflow)  [@roboflow] simplify the process but require cloud upload of your own sensitive image dataset and frequently impose paywalls or restrictive licences.
+YOLO (YOLOv11/YOLOv8) segmentation models routinely achieve impressive scores on benchmark datasets (i.e. COCO dataset [@lin2014coco]), yet deploying them on a *new* dataset still demands (i) command-line / coding proficiency, and (ii) careful data re-formatting that many domain scientists lack.  Commercial “auto-ML” platforms (e.g. Roboflow)  [@roboflow] simplify the process but require cloud upload of your own sensitive image dataset and frequently impose paywalls or restrictive licences.
 
-**ZERO-YOLO** closes this usability gap.  
-It bundles the complete YOLO segmentation training pipeline into a single, Dockerised web application built with *Streamlit*. Researchers from biology, medicine, materials science, or any other field can—in a few clicks—convert local image–mask pairs into YOLO format, fine-tune a pretrained model, monitor training metrics live, and visualise predictions, all while their data never leave the workstation.
+**ZERO-YOLO** closes this usability gap. It bundles the complete YOLO segmentation training pipeline into a single, Dockerised web application built with *Streamlit*. Researchers from biology, medicine, materials science, or any other field can—in a few clicks—convert local image–mask pairs into YOLO format, fine-tune a pretrained model, monitor training metrics live, and visualise predictions, all while their data never leave the workstation.
 
 
 # Statement of Need
@@ -104,7 +102,6 @@ ZERO-YOLO democratizes access to advanced segmentation, benefiting a wide spectr
 # State of the Field
 
 Most YOLO and segmentation tools require command-line or programming knowledge, limiting accessibility for non-technical users. ZERO-YOLO distinguishes itself with a fully graphical, no-code interface covering the complete workflow—from data harmonization and annotation conversion to training, inference, and performance evaluation.
-
 
 # References
 
