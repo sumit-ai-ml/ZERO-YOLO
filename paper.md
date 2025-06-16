@@ -101,6 +101,3 @@ Most YOLO and segmentation tools require command-line or programming knowledge, 
 
 # References
 
-- Jocher, G., Chaurasia, A., & Qiu, J. (2023). Ultralytics YOLOv8. GitHub repository. https://github.com/ultralytics/ultralytics
-- Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You Only Look Once: Unified, Real-Time Object Detection. *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition*, 779–788.
-
