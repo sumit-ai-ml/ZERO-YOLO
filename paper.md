@@ -10,27 +10,32 @@ tags:
   - open source
 authors:
   - name: Sumit Pandey
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0003-3791-2620
     affiliation: 1
   - name: Satyasaran Changdar
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0002-7704-8315
     affiliation: 2
   - name: Erik Bjørnager Dam
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0002-8888-2524
     affiliation: 1
 affiliations:
   - name: Department of Computer Science, University of Copenhagen
     index: 1
   - name: Department of Food Science, University of Copenhagen
     index: 2
-date: 17 February 2025
+date: 17 June 2025
 bibliography: paper.bib
 ---
 
 
 # Summary
 
-Image segmentation is central to diverse domains, from healthcare to agriculture, yet remains out of reach for many due to the programming expertise required. **ZERO-YOLO** addresses this gap by offering a truly no-code graphical user interface (GUI) for the entire workflow of training and evaluating YOLO-based segmentation models. Built on Streamlit, ZERO-YOLO empowers researchers, educators, and domain experts—regardless of coding background—to harness the power of modern deep learning for segmentation tasks.
+State-of-the-art object-detection models such as **YOLOv5/YOLOv8** routinely achieve impressive accuracy, yet deploying them on a *new* dataset still demands (i) command-line proficiency, (ii) careful data re-formatting, and (iii) GPU-enabled environments that many domain scientists lack.  
+Commercial “auto-ML” platforms (e.g. Roboflow)  [@roboflow] simplify the process but require cloud upload of your own sensitive image dataset and frequently impose paywalls or restrictive licences.
+
+**ZERO-YOLO** closes this usability gap.  
+It bundles the complete YOLO segmentation training pipeline into a single, Dockerised web application built with *Streamlit*. Researchers from biology, medicine, materials science, or any other field can—in a few clicks—convert local image–mask pairs into YOLO format, fine-tune a pretrained model, monitor training metrics live, and visualise predictions, all while their data never leave the workstation.
+
 
 # Statement of Need
 
@@ -42,9 +47,12 @@ Image segmentation is the process of dividing an image into distinct regions tha
 - **In manufacturing**, engineers use segmentation for quality control and defect detection.
 - **In education and research**, segmentation is vital for teaching and developing new computer vision techniques.
 
-Despite its broad relevance, modern segmentation solutions such as YOLO require specialized coding skills, familiarity with command-line tools, and careful data preparation. This creates a barrier for many domain experts—including clinicians, biologists, teachers, and industrial researchers—who need segmentation tools but do not have programming backgrounds.
+A YOLO segmentation model extends the “You Only Look Once” detector to predict pixel-precise masks and class labels in a single, end-to-end pass. Its lightning-fast inference and solid accuracy make it a go-to choice for real-time, resource-efficient vision tasks. While it shows amazing performance on benchmark datasets, *domain specialists* still face two practical barriers:
 
-**ZERO-YOLO** addresses this gap by providing a truly no-code, graphical user interface for the entire YOLO segmentation workflow. Users can prepare data, convert annotations, configure and train models, and visualize results—all without writing code. This lowers the entry barrier, enabling experts from any discipline to apply cutting-edge deep learning in their work.
+1. **Workflow complexity.** Preparing config files, writing training scripts, and troubleshooting CUDA/PyTorch errors deter non-ML experts [@ultralytics-docs].  
+2. **Data sovereignty.** Institutions handling medical or proprietary imagery cannot upload data to third-party services [@roboflow].
+
+ZERO-YOLO addresses both. It eliminates coding entirely and keeps the full workflow on-premise under a permissive MIT licence, empowering scientists to run high-quality object-detection experiments without cloud dependencies or legal entanglements.
 
 # Features
 
@@ -79,7 +87,7 @@ Despite its broad relevance, modern segmentation solutions such as YOLO require 
 | **Distribution**      | One-command Docker Compose (CPU or NVIDIA GPU profile) |
 | **Input**             | Image folder + segmentation-mask folder + *label\_names.xlsx* listing classes |
 | **Output**            | Trained `*.pt` weights, live training plots, interactive mask overlays |
-| **Licence**           | MIT (permissive, no copyleft) |
+| **Licence**           | MIT |
 
 Internally the app launches a YOLO training process with user-selected epochs and model size, streams logs to the UI, and writes artefacts to the `runs/` directory. A small custom wrapper auto-generates YOLO YAML configs and converts segmentation masks to COCO-style polygons when needed.
 
@@ -96,7 +104,6 @@ ZERO-YOLO democratizes access to advanced segmentation, benefiting a wide spectr
 # State of the Field
 
 Most YOLO and segmentation tools require command-line or programming knowledge, limiting accessibility for non-technical users. ZERO-YOLO distinguishes itself with a fully graphical, no-code interface covering the complete workflow—from data harmonization and annotation conversion to training, inference, and performance evaluation.
-
 
 
 # References
