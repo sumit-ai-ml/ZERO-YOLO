@@ -1,5 +1,5 @@
 ---
-title: 'ZERO-YOLO: A No-Code GUI for Training Custom YOLO Segmentation Models'
+title: 'ZERO-YOLO: A No-Code GUI for Training Custom Dataset on YOLO Segmentation Models'
 tags:
   - deep learning
   - image segmentation
