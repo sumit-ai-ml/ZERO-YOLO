@@ -23,9 +23,8 @@ affiliations:
     index: 1
   - name: Department of Food Science, University of Copenhagen
     index: 2
-date: 2025-06-03
-repository: https://github.com/sumit-ai-ml/ZERO-YOLO
-
+date: 17 February 2025
+bibliography: paper.bib
 ---
 
 
