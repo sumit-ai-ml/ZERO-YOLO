@@ -30,14 +30,14 @@ bibliography: paper.bib
 
 # Summary
 
-YOLO (YOLOv11/YOLOv8) segmentation models routinely achieve impressive scores on benchmark datasets (i.e. COCO dataset [@lin2014coco]), yet deploying them on a *new* dataset still demands (i) command-line / coding proficiency, and (ii) careful data re-formatting that many domain scientists lack.  Commercial “auto-ML” platforms (e.g. Roboflow)  [@roboflow] simplify the process but require cloud upload of your own sensitive image dataset and frequently impose paywalls or restrictive licences.
+YOLO (YOLOv11/YOLOv8) segmentation models routinely achieve impressive scores on benchmark datasets (i.e. COCO dataset [@lin2014coco]), yet deploying them on a *new* dataset still demands (i) command-line / coding proficiency, and (ii) careful data re-formatting that many domain scientists lack.  Commercial “auto-ML” platforms (e.g. Roboflow)  [@roboflow] simplify the process but require cloud upload of your own (possibly sensitive) image dataset and frequently impose paywalls or restrictive licences.
 
 **ZERO-YOLO** closes this usability gap. It bundles the complete YOLO segmentation training pipeline into a single, Dockerised web application built with *Streamlit*. Researchers from biology, medicine, materials science, or any other field can—in a few clicks—convert local image–mask pairs into YOLO format, fine-tune a pretrained model, monitor training metrics live, and visualise predictions, all while their data never leave the workstation.
 
 
 # Statement of Need
 
-Image segmentation is the process of dividing an image into distinct regions that correspond to different objects, structures, or classes of interest. It is a fundamental task in computer vision and has critical applications across a wide range of fields:
+Image segmentation is the process of dividing an image into distinct regions that correspond to different objects, structures, or classes of interest. It is a fundamental task in computer vision and image analysis, with critical applications across a wide range of fields.:
 
 - **In healthcare**, segmentation helps radiologists delineate tumors, organs, or lesions in medical scans.
 - **In agriculture**, researchers use segmentation to analyze crop health or identify pests from aerial imagery.
