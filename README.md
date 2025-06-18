@@ -1,4 +1,4 @@
-# ZERO-YOLO: A No-Code GUI for Training Custom YOLO Segmentation Models 🏥
+# ZERO-YOLO: A No-Code GUI for Training Custom Dataset on YOLO Segmentation Models 🏥
 
 ## What is ZERO-YOLO? 🤔
 ZERO-YOLO is a user-friendly tool that enables enthusiasts, engineers, and researchers to train YOLO models on their own private segmentation dataset. It streamlines the entire workflow—from data preprocessing and preparation to model training and result analysis.
