@@ -32,7 +32,7 @@ bibliography: paper.bib
 
 YOLO (YOLOv11/YOLOv8) segmentation models routinely achieve impressive scores on benchmark datasets (i.e. COCO dataset [@lin2014coco]), yet deploying them on a *new* dataset still demands (i) command-line / coding proficiency, and (ii) careful data re-formatting that many domain scientists lack.  Commercial “auto-ML” platforms (e.g. Roboflow)  [@roboflow] simplify the process but require cloud upload of your own (possibly sensitive) image dataset and frequently impose paywalls or restrictive licences.
 
-**ZERO-YOLO** closes this usability gap. It bundles the complete YOLO segmentation training pipeline into a single, Dockerised web application built with *Streamlit*. Researchers from biology, medicine, materials science, or any other field can—in a few clicks—convert local image–mask pairs into YOLO format, fine-tune a pretrained model, monitor training metrics live, and visualise predictions, all while their data never leave the workstation.
+**ZERO-YOLO** closes this usability gap. It bundles the complete YOLO segmentation training pipeline into a single, Dockerised web application built with *Streamlit*. Researchers from biology, medicine, materials science, or any other field can—in a few clicks—convert local image–mask pairs into YOLO format, fine-tune a pretrained model, monitor training metrics live, and visualise predictions, all while their data never leave the workstation. 
 
 
 # Statement of Need
@@ -50,7 +50,7 @@ A YOLO segmentation model extends the “You Only Look Once” detector to predi
 1. **Workflow complexity.** Preparing config files, writing training scripts, and troubleshooting CUDA/PyTorch errors deter non-ML experts [@ultralytics-docs].  
 2. **Data sovereignty.** Institutions handling medical or proprietary imagery cannot upload data to third-party services [@roboflow].
 
-ZERO-YOLO addresses both. It eliminates coding entirely and keeps the full workflow on-premise under a permissive MIT licence, empowering scientists to run high-quality object-detection experiments without cloud dependencies or legal entanglements.
+ZERO-YOLO addresses both. It eliminates coding entirely and keeps the full workflow on-premise under a permissive MIT licence, empowering scientists to run high-quality object-detection experiments without cloud dependencies or legal entanglements. The installation and usage instructions (both written and video) for the software can be found at: https://github.com/sumit-ai-ml/ZERO-YOLO
 
 # Features
 
