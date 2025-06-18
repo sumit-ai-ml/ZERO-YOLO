@@ -23,7 +23,7 @@ affiliations:
     index: 1
   - name: Department of Food Science, University of Copenhagen
     index: 2
-date: 17 June 2025
+date: 18 June 2025
 bibliography: paper.bib
 ---
 
