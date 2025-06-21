@@ -1,4 +1,4 @@
-Markdown: [![status](https://joss.theoj.org/papers/600d62752f0eb88aa14fdaad629f820e/status.svg)](https://joss.theoj.org/papers/600d62752f0eb88aa14fdaad629f820e)
+[![status](https://joss.theoj.org/papers/600d62752f0eb88aa14fdaad629f820e/status.svg)](https://joss.theoj.org/papers/600d62752f0eb88aa14fdaad629f820e)
 # ZERO-YOLO: A No-Code GUI for Training Custom Dataset on YOLO Segmentation Models 🏥
 
 ## What is ZERO-YOLO? 🤔
